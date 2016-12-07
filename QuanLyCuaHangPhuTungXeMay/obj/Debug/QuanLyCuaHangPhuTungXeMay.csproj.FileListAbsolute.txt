@@ -7,3 +7,6 @@ C:\Users\Eric\Desktop\QuanLyCuaHangPhuTungXeMay\QuanLyCuaHangPhuTungXeMay\obj\De
 C:\Users\Eric\Desktop\QuanLyCuaHangPhuTungXeMay\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.csproj.GenerateResource.Cache
 C:\Users\Eric\Desktop\QuanLyCuaHangPhuTungXeMay\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.exe
 C:\Users\Eric\Desktop\QuanLyCuaHangPhuTungXeMay\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.pdb
+C:\Users\Eric\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\bin\Debug\QuanLyCuaHangPhuTungXeMay.exe.config
+C:\Users\Eric\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.exe
+C:\Users\Eric\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.pdb
