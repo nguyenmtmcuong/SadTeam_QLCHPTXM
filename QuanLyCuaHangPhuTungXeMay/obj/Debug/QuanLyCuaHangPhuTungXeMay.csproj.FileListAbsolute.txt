@@ -1,1 +1,9 @@
-H:\QuanLyCuaHangPhuTungXeMay\QuanLyCuaHangPhuTungXeMay\bin\Debug\QuanLyCuaHangPhuTungXeMay.exe.config
+C:\Users\Eric\Desktop\QuanLyCuaHangPhuTungXeMay\QuanLyCuaHangPhuTungXeMay\bin\Debug\QuanLyCuaHangPhuTungXeMay.exe.config
+C:\Users\Eric\Desktop\QuanLyCuaHangPhuTungXeMay\QuanLyCuaHangPhuTungXeMay\bin\Debug\QuanLyCuaHangPhuTungXeMay.exe
+C:\Users\Eric\Desktop\QuanLyCuaHangPhuTungXeMay\QuanLyCuaHangPhuTungXeMay\bin\Debug\QuanLyCuaHangPhuTungXeMay.pdb
+C:\Users\Eric\Desktop\QuanLyCuaHangPhuTungXeMay\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.csprojResolveAssemblyReference.cache
+C:\Users\Eric\Desktop\QuanLyCuaHangPhuTungXeMay\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.frmMain.resources
+C:\Users\Eric\Desktop\QuanLyCuaHangPhuTungXeMay\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.Properties.Resources.resources
+C:\Users\Eric\Desktop\QuanLyCuaHangPhuTungXeMay\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.csproj.GenerateResource.Cache
+C:\Users\Eric\Desktop\QuanLyCuaHangPhuTungXeMay\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.exe
+C:\Users\Eric\Desktop\QuanLyCuaHangPhuTungXeMay\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.pdb
