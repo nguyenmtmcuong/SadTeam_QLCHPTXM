@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectToSQL.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -51,6 +52,8 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="KhachHangClass.cs" />
+    <Compile Include="KhachHangControl.cs" />
+    <Compile Include="KhachHangModify.cs" />
     <Compile Include="LoaiXeClass.cs" />
     <Compile Include="NhanVienClass.cs" />
     <Compile Include="PhuTungClass.cs" />
