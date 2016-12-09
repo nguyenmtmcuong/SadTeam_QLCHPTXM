@@ -61,6 +61,8 @@
     <Compile Include="KhachHangControl.cs" />
     <Compile Include="KhachHangModify.cs" />
     <Compile Include="LoaiXeClass.cs" />
+    <Compile Include="LoaiXeControl.cs" />
+    <Compile Include="LoaiXeModify.cs" />
     <Compile Include="NhanVienClass.cs" />
     <Compile Include="PhuTungClass.cs" />
     <Compile Include="Program.cs" />
