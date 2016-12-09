@@ -64,6 +64,8 @@
     <Compile Include="LoaiXeControl.cs" />
     <Compile Include="LoaiXeModify.cs" />
     <Compile Include="NhanVienClass.cs" />
+    <Compile Include="NhanVienControl.cs" />
+    <Compile Include="NhanVienModify.cs" />
     <Compile Include="PhuTungClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
