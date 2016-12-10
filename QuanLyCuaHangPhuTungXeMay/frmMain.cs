@@ -28,6 +28,12 @@ namespace QuanLyCuaHangPhuTungXeMay
             cn = new SqlConnection(cnStr);
         }
 
+        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmKhachHang formkh = new frmKhachHang();
+            formkh.Show();
+        }
+
 
     }
 }
