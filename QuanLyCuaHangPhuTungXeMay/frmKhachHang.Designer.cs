@@ -40,8 +40,8 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnTim = new System.Windows.Forms.Button();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rdnTen = new System.Windows.Forms.RadioButton();
+            this.rdmBienSo = new System.Windows.Forms.RadioButton();
             this.txtNhap = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -206,8 +206,8 @@
             // 
             this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.groupBox4.Controls.Add(this.btnTim);
-            this.groupBox4.Controls.Add(this.radioButton2);
-            this.groupBox4.Controls.Add(this.radioButton1);
+            this.groupBox4.Controls.Add(this.rdnTen);
+            this.groupBox4.Controls.Add(this.rdmBienSo);
             this.groupBox4.Controls.Add(this.txtNhap);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -229,30 +229,31 @@
             this.btnTim.TabIndex = 3;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
-            // radioButton2
+            // rdnTen
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(104, 49);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(84, 22);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.Text = "Theo tên";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdnTen.AutoSize = true;
+            this.rdnTen.Location = new System.Drawing.Point(129, 49);
+            this.rdnTen.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.rdnTen.Name = "rdnTen";
+            this.rdnTen.Size = new System.Drawing.Size(51, 22);
+            this.rdnTen.TabIndex = 2;
+            this.rdnTen.Text = "Tên";
+            this.rdnTen.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rdmBienSo
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(17, 49);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 22);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Theo mã";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdmBienSo.AutoSize = true;
+            this.rdmBienSo.Checked = true;
+            this.rdmBienSo.Location = new System.Drawing.Point(42, 49);
+            this.rdmBienSo.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.rdmBienSo.Name = "rdmBienSo";
+            this.rdmBienSo.Size = new System.Drawing.Size(76, 22);
+            this.rdmBienSo.TabIndex = 2;
+            this.rdmBienSo.TabStop = true;
+            this.rdmBienSo.Text = "Biển số";
+            this.rdmBienSo.UseVisualStyleBackColor = true;
             // 
             // txtNhap
             // 
@@ -558,8 +559,8 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnTim;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdnTen;
+        private System.Windows.Forms.RadioButton rdmBienSo;
         private System.Windows.Forms.TextBox txtNhap;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
