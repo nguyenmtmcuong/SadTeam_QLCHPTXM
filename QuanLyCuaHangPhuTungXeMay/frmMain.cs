@@ -34,6 +34,29 @@ namespace QuanLyCuaHangPhuTungXeMay
             formkh.Show();
         }
 
+        private void asdasdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPhuTung formpt = new frmPhuTung();
+            formpt.Show();
+        }
+
+        private void asdasdToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmLoaiXe formlx = new frmLoaiXe();
+            formlx.Show();
+        }
+
+        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNhanVien formnv = new frmNhanVien();
+            formnv.Show();
+        }
+
+        private void hóaĐơnBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
