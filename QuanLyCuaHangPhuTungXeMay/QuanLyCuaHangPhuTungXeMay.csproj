@@ -85,6 +85,8 @@
     <Compile Include="NhanVienControl.cs" />
     <Compile Include="NhanVienModify.cs" />
     <Compile Include="PhuTungClass.cs" />
+    <Compile Include="PhuTungControl.cs" />
+    <Compile Include="PhuTungModify.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmKhachHang.resx">
