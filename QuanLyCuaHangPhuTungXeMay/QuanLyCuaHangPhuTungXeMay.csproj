@@ -45,6 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectToSQL.cs" />
+    <Compile Include="frmHDBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHDBH.Designer.cs">
+      <DependentUpon>frmHDBH.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="PhuTungClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmHDBH.resx">
+      <DependentUpon>frmHDBH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
