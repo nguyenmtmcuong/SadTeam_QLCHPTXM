@@ -31,3 +31,4 @@ C:\Users\Eric\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanL
 C:\Users\Dell-Pc\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.frmLoaiXe.resources
 C:\Users\Dell-Pc\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.frmNhanVien.resources
 C:\Users\Eric\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.frmNhanVien.resources
+C:\Users\Dell-Pc\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.frmPhuTung.resources
