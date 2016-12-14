@@ -28,3 +28,6 @@ C:\Users\Eric\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanL
 C:\Users\Eric\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.frmMain.resources
 C:\Users\Eric\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.Properties.Resources.resources
 C:\Users\Eric\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.csproj.GenerateResource.Cache
+C:\Users\Dell-Pc\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.frmLoaiXe.resources
+C:\Users\Dell-Pc\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.frmNhanVien.resources
+C:\Users\Eric\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.frmNhanVien.resources
