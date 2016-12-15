@@ -163,6 +163,7 @@ namespace QuanLyCuaHangPhuTungXeMay
         private void txtNhap_TextChanged(object sender, EventArgs e)
         {
 
+
             if (txtNhap.Text.Length == 0)
                 dgvKhachHang.DataSource = dttn.TimNhanh("SELECT * FROM KhachHang");
             else
@@ -172,5 +173,6 @@ namespace QuanLyCuaHangPhuTungXeMay
                 else dgvKhachHang.DataSource = dttn.TimNhanh("select * from KhachHang where TenKH LIKE  N'%" + txtNhap + "%'");
             }
         }
+
     }
 }
