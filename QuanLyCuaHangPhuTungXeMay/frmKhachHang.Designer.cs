@@ -39,9 +39,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnTim = new System.Windows.Forms.Button();
             this.rdnTen = new System.Windows.Forms.RadioButton();
-            this.rdmBienSo = new System.Windows.Forms.RadioButton();
+            this.rdnBienSo = new System.Windows.Forms.RadioButton();
             this.txtNhap = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -205,9 +204,8 @@
             // groupBox4
             // 
             this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.groupBox4.Controls.Add(this.btnTim);
             this.groupBox4.Controls.Add(this.rdnTen);
-            this.groupBox4.Controls.Add(this.rdmBienSo);
+            this.groupBox4.Controls.Add(this.rdnBienSo);
             this.groupBox4.Controls.Add(this.txtNhap);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -220,17 +218,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tìm nhanh";
             // 
-            // btnTim
-            // 
-            this.btnTim.Location = new System.Drawing.Point(223, 44);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(61, 33);
-            this.btnTim.TabIndex = 3;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.UseVisualStyleBackColor = true;
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
-            // 
             // rdnTen
             // 
             this.rdnTen.AutoSize = true;
@@ -242,18 +229,18 @@
             this.rdnTen.Text = "Tên";
             this.rdnTen.UseVisualStyleBackColor = true;
             // 
-            // rdmBienSo
+            // rdnBienSo
             // 
-            this.rdmBienSo.AutoSize = true;
-            this.rdmBienSo.Checked = true;
-            this.rdmBienSo.Location = new System.Drawing.Point(42, 49);
-            this.rdmBienSo.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.rdmBienSo.Name = "rdmBienSo";
-            this.rdmBienSo.Size = new System.Drawing.Size(76, 22);
-            this.rdmBienSo.TabIndex = 2;
-            this.rdmBienSo.TabStop = true;
-            this.rdmBienSo.Text = "Biển số";
-            this.rdmBienSo.UseVisualStyleBackColor = true;
+            this.rdnBienSo.AutoSize = true;
+            this.rdnBienSo.Checked = true;
+            this.rdnBienSo.Location = new System.Drawing.Point(42, 49);
+            this.rdnBienSo.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.rdnBienSo.Name = "rdnBienSo";
+            this.rdnBienSo.Size = new System.Drawing.Size(76, 22);
+            this.rdnBienSo.TabIndex = 2;
+            this.rdnBienSo.TabStop = true;
+            this.rdnBienSo.Text = "Biển số";
+            this.rdnBienSo.UseVisualStyleBackColor = true;
             // 
             // txtNhap
             // 
@@ -262,6 +249,7 @@
             this.txtNhap.Name = "txtNhap";
             this.txtNhap.Size = new System.Drawing.Size(226, 24);
             this.txtNhap.TabIndex = 1;
+            this.txtNhap.TextChanged += new System.EventHandler(this.txtNhap_TextChanged);
             // 
             // label8
             // 
@@ -558,9 +546,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.RadioButton rdnTen;
-        private System.Windows.Forms.RadioButton rdmBienSo;
+        private System.Windows.Forms.RadioButton rdnBienSo;
         private System.Windows.Forms.TextBox txtNhap;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;

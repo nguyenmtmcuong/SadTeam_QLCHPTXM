@@ -32,7 +32,7 @@ namespace QuanLyCuaHangPhuTungXeMay
         string cnStr;
         public ConnectToSQL()
         {
-            cnStr = "Server = .; Database = QuanLyCuaHangXeMay; Integrated Security = true";
+            cnStr = "Server = .; Database =QuanLyCuaHangXeMay; Integrated Security = true";
             _cn = new SqlConnection(cnStr);
         }
 
