@@ -11,7 +11,6 @@
     <AssemblyName>QuanLyCuaHangPhuTungXeMay</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,7 +26,6 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -63,6 +61,12 @@
   <ItemGroup>
     <Compile Include="DataTableTimNhanh.cs" />
     <Compile Include="ConnectToSQL.cs" />
+    <Compile Include="frmHDBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHDBH.Designer.cs">
+      <DependentUpon>frmHDBH.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +111,9 @@
     <Compile Include="PhuTungModify.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmHDBH.resx">
+      <DependentUpon>frmHDBH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
