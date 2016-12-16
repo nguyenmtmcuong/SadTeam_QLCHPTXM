@@ -97,6 +97,9 @@
     <Compile Include="frmPhuTung.Designer.cs">
       <DependentUpon>frmPhuTung.cs</DependentUpon>
     </Compile>
+    <Compile Include="HDBHClass.cs" />
+    <Compile Include="HDBHControl.cs" />
+    <Compile Include="HDBHModify.cs" />
     <Compile Include="KhachHangClass.cs" />
     <Compile Include="KhachHangControl.cs" />
     <Compile Include="KhachHangModify.cs" />
