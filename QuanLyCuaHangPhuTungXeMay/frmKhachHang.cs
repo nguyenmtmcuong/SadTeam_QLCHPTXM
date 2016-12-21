@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace QuanLyCuaHangPhuTungXeMay
 {
     public partial class frmKhachHang : Form
     {
+        DataTableTimNhanh dttn = new DataTableTimNhanh();
         KhachHangControl khCtrl = new KhachHangControl();
         KhachHang kh = new KhachHang();
         int flag = 0;
@@ -138,7 +140,7 @@ namespace QuanLyCuaHangPhuTungXeMay
                 else
                     MessageBox.Show("Sửa thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            frmKhachHang_Load(sender , e);
+            frmKhachHang_Load(sender, e);
             dis_en(false);
         }
 
@@ -158,11 +160,19 @@ namespace QuanLyCuaHangPhuTungXeMay
             }
         }
 
-        private void btnTim_Click(object sender, EventArgs e)
+        private void txtNhap_TextChanged(object sender, EventArgs e)
         {
 
+
+            if (txtNhap.Text.Length == 0)
+                dgvKhachHang.DataSource = dttn.TimNhanh("SELECT * FROM KhachHang");
+            else
+            {
+                if (rdnBienSo.Checked)
+                    dgvKhachHang.DataSource = dttn.TimNhanh("Select * from KhachHang where BienSo ='"+txtNhap+"'");
+                else dgvKhachHang.DataSource = dttn.TimNhanh("select * from KhachHang where TenKH LIKE  N'%" + txtNhap + "%'");
+            }
         }
 
-                                
     }
 }
