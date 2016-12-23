@@ -176,6 +176,7 @@
             this.cbbMaKH.Name = "cbbMaKH";
             this.cbbMaKH.Size = new System.Drawing.Size(158, 28);
             this.cbbMaKH.TabIndex = 27;
+            this.cbbMaKH.SelectedIndexChanged += new System.EventHandler(this.cbbMaKH_SelectedIndexChanged_1);
             // 
             // cbbMaNV
             // 
