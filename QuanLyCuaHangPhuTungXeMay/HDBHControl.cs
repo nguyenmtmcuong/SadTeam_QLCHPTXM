@@ -16,12 +16,12 @@ namespace QuanLyCuaHangPhuTungXeMay
             return HDBHMod.GetData();
         }
 
-        public bool ThemNhanVien(HDBH hdbh)
+        public bool ThemHD(HDBH hdbh)
         {
             return HDBHMod.TaoMoiHDBH(hdbh);
         }
 
-        public bool XoaNhanVien(string mahd)
+        public bool XoaHD(string mahd)
         {
             return HDBHMod.XoaHDBH(mahd);
         }

@@ -57,7 +57,8 @@ namespace QuanLyCuaHangPhuTungXeMay
             get { return khuyenmai; }
             set { khuyenmai = value; }
         }
-        int soluong, dongia, thanhtien;
+        int soluong, dongia;
+        double thanhtien;
 
         public int SoLuong
         {
@@ -71,7 +72,7 @@ namespace QuanLyCuaHangPhuTungXeMay
             set { dongia = value; }
         }
 
-        public int ThanhTien
+        public double ThanhTien
         {
             get { return thanhtien; }
             set { thanhtien = value; }

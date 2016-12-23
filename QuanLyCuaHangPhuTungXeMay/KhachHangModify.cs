@@ -35,6 +35,27 @@ namespace QuanLyCuaHangPhuTungXeMay
             }
             return dt;
         }
+        public DataTable GetData_fromIDKH(string MaKH)
+        {
+            DataTable dt = new DataTable();
+            cmd.CommandText = "SELECT * FROM KhachHang WHERE MaKH = '" + MaKH + "'";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cn.Connection;
+            try
+            {
+                cn.Connect();
+                SqlDataAdapter _da = new SqlDataAdapter(cmd);
+                _da.Fill(dt);
+                cn.DisConnect();
+            }
+            catch (Exception ex)
+            {
+                string mex = ex.Message;
+                cmd.Dispose();
+                cn.DisConnect();
+            }
+            return dt;
+        }
 
         public bool ThemKhachHang(KhachHang kh)
         {

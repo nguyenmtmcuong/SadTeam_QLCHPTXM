@@ -12,7 +12,9 @@ namespace QuanLyCuaHangPhuTungXeMay
 {
     public partial class frmHDBH : Form
     {
+        KhachHangModify khmod = new KhachHangModify();
         HDBHControl hdbhctr = new HDBHControl();
+        int flag=0;
         public frmHDBH()
         {
             InitializeComponent();
@@ -69,10 +71,11 @@ namespace QuanLyCuaHangPhuTungXeMay
         private void LoadcbbMaKH()
         {
             KhachHangControl khctr = new KhachHangControl();
-            cbbMaKH.DataSource = hdbhctr.GetData();
+            cbbMaKH.DataSource = khctr.GetData();
             cbbMaKH.DisplayMember = "MaKH";
             cbbMaKH.ValueMember = "MaKH";
         }
+
 
         private void cleardata()
         {
@@ -84,17 +87,22 @@ namespace QuanLyCuaHangPhuTungXeMay
             LoadcbbMaKH();
         }
 
-        //private void adddata(HDBH hd)
-        //{
-        //    hd.MaHD = txtMaHD.Text.Trim();
-        //    hd.MaKH = cbbMaKH.SelectedValue.ToString();
-        //    hd.MaNV = cbbMaNV.SelectedValue.ToString();
-        //    hd.KhuyenMai = txtKhuyenMai.Text.Trim();
-        //    hd.MaPT = cbbMaPhuTung.SelectedValue.ToString();
-        //    hd.Ngay=
+        private void GanDuLieu(HDBH hd)
+        {
+            hd.MaHD = txtMaHD.Text.Trim();
+            hd.MaKH = cbbMaKH.SelectedValue.ToString();
+            hd.MaNV = cbbMaNV.SelectedValue.ToString();
+            hd.KhuyenMai = txtKhuyenMai.Text.Trim();
+            hd.MaPT = cbbMaPhuTung.SelectedValue.ToString();
+            hd.Ngay = txtNgay.Text.Trim();
+            hd.KhuyenMai = txtKhuyenMai.Text.Trim();
+            hd.ThanhTien = Double.Parse(txtThanhTien.Text.Trim());
+            hd.MaPT = cbbMaPhuTung.SelectedValue.ToString();
+            hd.SoLuong = Int32.Parse(txtSoLuong.Text.Trim());
+            hd.DonGia = Int32.Parse(txtDonGia.Text.Trim());
+        }
 
-
-        //}
+        
         private void btnTao_Click(object sender, EventArgs e)
         {
             dis_en(true);
@@ -113,7 +121,16 @@ namespace QuanLyCuaHangPhuTungXeMay
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
+            GanDuLieu(hd);
+            if (flag == 0)
+            {
+                if (hdbhctr.ThemHD(hdbh))
+                    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("Thêm thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            frmHDBH_Load(sender, e);
+            dis_en(false);
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -134,6 +151,12 @@ namespace QuanLyCuaHangPhuTungXeMay
         private void dgvDanhSachPhuTung_DataSourceChanged(object sender, EventArgs e)
         {
             bingding();
+        }
+
+        private void cbbMaKH_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            DataTable dtkh = khmod.GetData_fromIDKH(cbbMaKH.Text);
+            //cbbBienSo.Text = dtkh.Rows[0]["BienSo"].ToString();
         }
 
 
