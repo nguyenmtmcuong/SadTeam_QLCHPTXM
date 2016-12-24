@@ -9,7 +9,7 @@ namespace QuanLyCuaHangPhuTungXeMay
 {
     class PhuTungControl
     {
-        PhuTungModify ptMod = new PhuTungModify();
+        PhuTungModel ptMod = new PhuTungModel();
 
         public DataTable GetData()
         {

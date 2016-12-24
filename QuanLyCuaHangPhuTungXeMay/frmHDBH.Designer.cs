@@ -35,14 +35,12 @@
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.txtKhuyenMai = new System.Windows.Forms.TextBox();
             this.cbbBienSo = new System.Windows.Forms.ComboBox();
-            this.cbbMaKH = new System.Windows.Forms.ComboBox();
             this.cbbMaNV = new System.Windows.Forms.ComboBox();
             this.txtMaHD = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
@@ -100,17 +98,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.btnNgayLap);
             this.groupBox3.Controls.Add(this.txtNgay);
-            this.groupBox3.Controls.Add(this.txtThanhTien);
-            this.groupBox3.Controls.Add(this.txtKhuyenMai);
             this.groupBox3.Controls.Add(this.cbbBienSo);
-            this.groupBox3.Controls.Add(this.cbbMaKH);
             this.groupBox3.Controls.Add(this.cbbMaNV);
             this.groupBox3.Controls.Add(this.txtMaHD);
-            this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
@@ -145,7 +137,7 @@
             // 
             this.txtThanhTien.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtThanhTien.Enabled = false;
-            this.txtThanhTien.Location = new System.Drawing.Point(355, 100);
+            this.txtThanhTien.Location = new System.Drawing.Point(114, 195);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.Size = new System.Drawing.Size(182, 26);
             this.txtThanhTien.TabIndex = 29;
@@ -154,7 +146,7 @@
             // 
             this.txtKhuyenMai.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtKhuyenMai.Enabled = false;
-            this.txtKhuyenMai.Location = new System.Drawing.Point(355, 66);
+            this.txtKhuyenMai.Location = new System.Drawing.Point(114, 161);
             this.txtKhuyenMai.Name = "txtKhuyenMai";
             this.txtKhuyenMai.Size = new System.Drawing.Size(182, 26);
             this.txtKhuyenMai.TabIndex = 30;
@@ -167,16 +159,6 @@
             this.cbbBienSo.Name = "cbbBienSo";
             this.cbbBienSo.Size = new System.Drawing.Size(158, 28);
             this.cbbBienSo.TabIndex = 26;
-            // 
-            // cbbMaKH
-            // 
-            this.cbbMaKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbbMaKH.FormattingEnabled = true;
-            this.cbbMaKH.Location = new System.Drawing.Point(81, 100);
-            this.cbbMaKH.Name = "cbbMaKH";
-            this.cbbMaKH.Size = new System.Drawing.Size(158, 28);
-            this.cbbMaKH.TabIndex = 27;
-            this.cbbMaKH.SelectedIndexChanged += new System.EventHandler(this.cbbMaKH_SelectedIndexChanged_1);
             // 
             // cbbMaNV
             // 
@@ -200,7 +182,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(258, 69);
+            this.label7.Location = new System.Drawing.Point(17, 164);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 20);
             this.label7.TabIndex = 18;
@@ -222,7 +204,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(258, 103);
+            this.label5.Location = new System.Drawing.Point(17, 198);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 20);
             this.label5.TabIndex = 20;
@@ -238,17 +220,6 @@
             this.label4.Size = new System.Drawing.Size(62, 20);
             this.label4.TabIndex = 21;
             this.label4.Text = "Biển số";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 20);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Mã KH";
             // 
             // label2
             // 
@@ -361,12 +332,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.btnBot);
+            this.groupBox2.Controls.Add(this.txtKhuyenMai);
+            this.groupBox2.Controls.Add(this.txtThanhTien);
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Controls.Add(this.txtDonGia);
+            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtSoLuong);
             this.groupBox2.Controls.Add(this.cbbTenPhuTung);
             this.groupBox2.Controls.Add(this.cbbMaPhuTung);
             this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
@@ -401,7 +376,7 @@
             // btnBot
             // 
             this.btnBot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBot.Location = new System.Drawing.Point(181, 197);
+            this.btnBot.Location = new System.Drawing.Point(181, 227);
             this.btnBot.Name = "btnBot";
             this.btnBot.Size = new System.Drawing.Size(61, 56);
             this.btnBot.TabIndex = 6;
@@ -412,7 +387,7 @@
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(73, 197);
+            this.btnThem.Location = new System.Drawing.Point(73, 227);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(61, 56);
             this.btnThem.TabIndex = 7;
@@ -528,14 +503,12 @@
         private System.Windows.Forms.TextBox txtThanhTien;
         private System.Windows.Forms.TextBox txtKhuyenMai;
         private System.Windows.Forms.ComboBox cbbBienSo;
-        private System.Windows.Forms.ComboBox cbbMaKH;
         private System.Windows.Forms.ComboBox cbbMaNV;
         private System.Windows.Forms.TextBox txtMaHD;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnHuy;

@@ -59,8 +59,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataTableTimNhanh.cs" />
     <Compile Include="ConnectToSQL.cs" />
+    <Compile Include="CTHDBHClass.cs" />
+    <Compile Include="CTHDBHControl.cs" />
+    <Compile Include="CTHDBHModel.cs" />
     <Compile Include="frmHDBH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,19 +101,19 @@
     </Compile>
     <Compile Include="HDBHClass.cs" />
     <Compile Include="HDBHControl.cs" />
-    <Compile Include="HDBHModify.cs" />
+    <Compile Include="HDBHModel.cs" />
     <Compile Include="KhachHangClass.cs" />
     <Compile Include="KhachHangControl.cs" />
-    <Compile Include="KhachHangModify.cs" />
+    <Compile Include="KhachHangModel.cs" />
     <Compile Include="LoaiXeClass.cs" />
     <Compile Include="LoaiXeControl.cs" />
-    <Compile Include="LoaiXeModify.cs" />
+    <Compile Include="LoaiXeModel.cs" />
     <Compile Include="NhanVienClass.cs" />
     <Compile Include="NhanVienControl.cs" />
-    <Compile Include="NhanVienModify.cs" />
+    <Compile Include="NhanVienModel.cs" />
     <Compile Include="PhuTungClass.cs" />
     <Compile Include="PhuTungControl.cs" />
-    <Compile Include="PhuTungModify.cs" />
+    <Compile Include="PhuTungModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmHDBH.resx">

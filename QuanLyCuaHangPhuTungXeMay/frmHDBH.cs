@@ -12,8 +12,9 @@ namespace QuanLyCuaHangPhuTungXeMay
 {
     public partial class frmHDBH : Form
     {
-        KhachHangModify khmod = new KhachHangModify();
+        KhachHangModel khmod = new KhachHangModel();
         HDBHControl hdbhctr = new HDBHControl();
+        HDBH hd = new HDBH();
         int flag=0;
         public frmHDBH()
         {
@@ -25,40 +26,40 @@ namespace QuanLyCuaHangPhuTungXeMay
             DataTable dt = new DataTable();
             dt = hdbhctr.GetData();
             dgvDanhSachHoaDon.DataSource=dt;
-            bingding();
+            //bingding();
         }
 
-        private void bingding()
-        {
-            txtMaHD.DataBindings.Clear();
-            txtMaHD.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"MaHD");
-            cbbBienSo.DataBindings.Clear();
-            cbbBienSo.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"BienSo");
-            cbbMaKH.DataBindings.Clear();
-            cbbMaKH.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"MaKH");
-            cbbMaNV.DataBindings.Clear();
-            cbbMaNV.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"MaNV");
-            txtNgay.DataBindings.Clear();
-            txtNgay.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"NgayLap");
-            txtKhuyenMai.DataBindings.Clear();
-            txtKhuyenMai.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"KhuyenMai");
-            txtThanhTien.DataBindings.Clear();
-            txtThanhTien.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"ThanhTien");
-            cbbMaPhuTung.DataBindings.Clear();
-            cbbMaPhuTung.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"MaPT");
-            cbbTenPhuTung.DataBindings.Clear();
-            cbbTenPhuTung.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"TenPhuTung");
-            txtSoLuong.DataBindings.Clear();
-            txtSoLuong.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"SoLuong");
-            txtDonGia.DataBindings.Clear();
-            txtDonGia.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"DonGia");
-        }
+        //private void bingding()
+        //{
+        //    txtMaHD.DataBindings.Clear();
+        //    txtMaHD.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"MaHD");
+        //    cbbBienSo.DataBindings.Clear();
+        //    cbbBienSo.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"BienSo");
+        //    //cbbMaKH.DataBindings.Clear();
+        //    //.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"MaKH");
+        //    cbbMaNV.DataBindings.Clear();
+        //    cbbMaNV.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"MaNV");
+        //    txtNgay.DataBindings.Clear();
+        //    txtNgay.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"NgayLap");
+        //    txtKhuyenMai.DataBindings.Clear();
+        //    txtKhuyenMai.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"KhuyenMai");
+        //    txtThanhTien.DataBindings.Clear();
+        //    txtThanhTien.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"ThanhTien");
+        //    cbbMaPhuTung.DataBindings.Clear();
+        //    cbbMaPhuTung.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"MaPT");
+        //    cbbTenPhuTung.DataBindings.Clear();
+        //    cbbTenPhuTung.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"TenPhuTung");
+        //    txtSoLuong.DataBindings.Clear();
+        //    txtSoLuong.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"SoLuong");
+        //    txtDonGia.DataBindings.Clear();
+        //    txtDonGia.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"DonGia");
+        //}
 
         private void dis_en(bool e)
         {
             txtMaHD.Enabled = e;
             cbbMaNV.Enabled = e;
-            cbbMaKH.Enabled = e;
+            //cbbMaKH.Enabled = e;
             cbbBienSo.Enabled = e;
             btnTao.Enabled = !e;
             btnXoa.Enabled = !e;
@@ -68,14 +69,13 @@ namespace QuanLyCuaHangPhuTungXeMay
             btnNgayLap.Enabled = e;
         }
 
-        private void LoadcbbMaKH()
-        {
-            KhachHangControl khctr = new KhachHangControl();
-            cbbMaKH.DataSource = khctr.GetData();
-            cbbMaKH.DisplayMember = "MaKH";
-            cbbMaKH.ValueMember = "MaKH";
-        }
-
+        //private void LoadcbbMaKH()
+        //{
+        //    KhachHangControl khctr = new KhachHangControl();
+        //    cbbMaKH.DataSource = khctr.GetData();
+        //    cbbMaKH.DisplayMember = "MaKH";
+        //    cbbMaKH.ValueMember = "MaKH";
+        //}
 
         private void cleardata()
         {
@@ -84,22 +84,23 @@ namespace QuanLyCuaHangPhuTungXeMay
             txtKhuyenMai.Text = "";
             txtThanhTien.Text = "";
             txtNgay.Text = DateTime.Now.Date.ToShortDateString();
-            LoadcbbMaKH();
+            //LoadcbbMaKH();
         }
 
-        private void GanDuLieu(HDBH hd)
+        private void adddata(HDBH hd)
         {
-            hd.MaHD = txtMaHD.Text.Trim();
-            hd.MaKH = cbbMaKH.SelectedValue.ToString();
-            hd.MaNV = cbbMaNV.SelectedValue.ToString();
-            hd.KhuyenMai = txtKhuyenMai.Text.Trim();
-            hd.MaPT = cbbMaPhuTung.SelectedValue.ToString();
-            hd.Ngay = txtNgay.Text.Trim();
-            hd.KhuyenMai = txtKhuyenMai.Text.Trim();
-            hd.ThanhTien = Double.Parse(txtThanhTien.Text.Trim());
-            hd.MaPT = cbbMaPhuTung.SelectedValue.ToString();
-            hd.SoLuong = Int32.Parse(txtSoLuong.Text.Trim());
-            hd.DonGia = Int32.Parse(txtDonGia.Text.Trim());
+            hd.MaHoaDon = txtMaHD.Text.Trim();
+            //hd.MaKH = cbbMaKH.SelectedValue.ToString();
+            hd.BienSo = cbbBienSo.SelectedValue.ToString();
+            hd.NguoiLap = cbbMaNV.SelectedValue.ToString();
+            //hd.KhuyenMai = txtKhuyenMai.Text.Trim();
+            //hd.MaPT = cbbMaPhuTung.SelectedValue.ToString();
+            hd.NgayLap = txtNgay.Text.Trim();
+            //hd.KhuyenMai = txtKhuyenMai.Text.Trim();
+            //hd.ThanhTien = Double.Parse(txtThanhTien.Text.Trim());
+            //hd.MaPT = cbbMaPhuTung.SelectedValue.ToString();
+            //hd.SoLuong = Int32.Parse(txtSoLuong.Text.Trim());
+            //hd.DonGia = Int32.Parse(txtDonGia.Text.Trim());
         }
 
         
@@ -121,10 +122,10 @@ namespace QuanLyCuaHangPhuTungXeMay
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            GanDuLieu(hd);
+            adddata(hd);
             if (flag == 0)
             {
-                if (hdbhctr.ThemHD(hdbh))
+                if (hdbhctr.AddData(hd))
                     MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("Thêm thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -150,12 +151,12 @@ namespace QuanLyCuaHangPhuTungXeMay
 
         private void dgvDanhSachPhuTung_DataSourceChanged(object sender, EventArgs e)
         {
-            bingding();
+            //bingding();
         }
 
         private void cbbMaKH_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            DataTable dtkh = khmod.GetData_fromIDKH(cbbMaKH.Text);
+            //DataTable dtkh = khmod.GetData_fromIDKH(cbbMaKH.Text);
             //cbbBienSo.Text = dtkh.Rows[0]["BienSo"].ToString();
         }
 

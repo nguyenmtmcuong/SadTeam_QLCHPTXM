@@ -3,42 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using QuanLyCuaHangPhuTungXeMay.Properties;
 
 namespace QuanLyCuaHangPhuTungXeMay
 {
-    class KhachHangModify
+    class NhanVienModel
     {
-        ConnectToSQL cn = new ConnectToSQL();  
+        ConnectToSQL cn = new ConnectToSQL();
         SqlCommand cmd = new SqlCommand();
 
         public DataTable GetData()
         {
             DataTable dt = new DataTable();
-            cmd.CommandText = "SELECT * FROM KhachHang";
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = cn.Connection;
-            try
-            {
-                cn.Connect();
-                SqlDataAdapter _da = new SqlDataAdapter(cmd);
-                _da.Fill(dt);
-                cn.DisConnect();
-            }
-            catch (Exception ex)
-            {
-                string mex = ex.Message;
-                cmd.Dispose();
-                cn.DisConnect();
-            }
-            return dt;
-        }
-        public DataTable GetData_fromIDKH(string MaKH)
-        {
-            DataTable dt = new DataTable();
-            cmd.CommandText = "SELECT * FROM KhachHang WHERE MaKH = '" + MaKH + "'";
+            cmd.CommandText = "SELECT * FROM NhanVien";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cn.Connection;
             try
@@ -57,9 +36,9 @@ namespace QuanLyCuaHangPhuTungXeMay
             return dt;
         }
 
-        public bool ThemKhachHang(KhachHang kh)
+        public bool ThemNhanVien(NhanVien nv)
         {
-            cmd.CommandText = "INSERT INTO KhachHang values ('" + kh.Ma + "', N'" + kh.Ten + "', '" + kh.SDT + "', '" + kh.MaLoaiXe + "', '" + kh.BienSo + "', '" + kh.SoLanSuaChua + "', '" + kh.DiemTichLuy + "', '" + kh.GhiChu + "')";
+            cmd.CommandText = "INSERT INTO NhanVien values ('" + nv.Ma + "',N'" + nv.Ten + "',N'" + nv.ChucVu + "','" + nv.MatKhau + "',N'" + nv.DiaChi + "','" + nv.SDT + "',N'" + nv.GhiChu + "')";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cn.Connection;
             try
@@ -79,30 +58,9 @@ namespace QuanLyCuaHangPhuTungXeMay
             return false;
         }
 
-        public bool SuaKhachHang(KhachHang kh)
+        public bool SuaNhanVien(NhanVien nv)
         {
-            cmd.CommandText = "UPDATE KhachHang SET TenKH = N'" + kh.Ten + "',  SDT ='" + kh.SDT + "', MaLoaiXe ='" + kh.MaLoaiXe + "', BienSo ='" + kh.BienSo + "', SoLanSuaChua ='" + kh.SoLanSuaChua + "',  DiemTichLuy='" + kh.DiemTichLuy + "', GhiChu = '" + kh.GhiChu + "' Where MaKH= '" + kh.Ma + "'";
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = cn.Connection;
-            try
-            {
-                cn.Connect();
-                cmd.ExecuteNonQuery();
-                cn.DisConnect();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                string mex = ex.Message;
-                cmd.Dispose();
-                cn.DisConnect();
-            }
-            return false;
-        }
-
-        public bool XoaKhachHang(String ma)
-        {
-            cmd.CommandText = "DELETE KhachHang Where MaKH = '" + ma + "' ";
+            cmd.CommandText = "UPDATE NhanVien SET TenNV = N'" + nv.Ten + "',  ChucVu =N'" + nv.ChucVu + "', MatKhau ='" + nv.MatKhau + "', DiaChi =N'" + nv.DiaChi + "', SDT ='" + nv.SDT + "',  GhiChu=N'" + nv.GhiChu + "' Where MaNV= '" + nv.Ma + "'";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cn.Connection;
             try
@@ -122,5 +80,27 @@ namespace QuanLyCuaHangPhuTungXeMay
             return false;
         }
 
+        public bool XoaNhanVien(String ma)
+        {
+            cmd.CommandText = "DELETE NhanVien Where MaNV = '" + ma + "' ";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cn.Connection;
+            try
+            {
+                cn.Connect();
+                cmd.ExecuteNonQuery();
+                cn.DisConnect();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                string mex = ex.Message;
+                cmd.Dispose();
+                cn.DisConnect();
+
+            }
+            return false;
+        }
     }
 }
+

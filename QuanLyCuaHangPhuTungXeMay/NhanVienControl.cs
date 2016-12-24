@@ -9,7 +9,7 @@ namespace QuanLyCuaHangPhuTungXeMay
 {
     class NhanVienControl
     {
-        NhanVienModify nvMod = new NhanVienModify();
+        NhanVienModel nvMod = new NhanVienModel();
 
         public DataTable GetData()
         {
