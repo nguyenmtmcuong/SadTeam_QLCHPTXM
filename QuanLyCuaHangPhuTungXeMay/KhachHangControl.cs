@@ -9,7 +9,7 @@ namespace QuanLyCuaHangPhuTungXeMay
 {
     class KhachHangControl
     {
-        KhachHangModify khMod = new KhachHangModify();
+        KhachHangModel khMod = new KhachHangModel();
 
         public DataTable GetData()
         {

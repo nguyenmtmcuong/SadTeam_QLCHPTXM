@@ -9,7 +9,7 @@ namespace QuanLyCuaHangPhuTungXeMay
 {
     class LoaiXeControl
     {
-        LoaiXeModify lxMod = new LoaiXeModify();
+        LoaiXeModel lxMod = new LoaiXeModel();
 
         public DataTable GetData()
         {

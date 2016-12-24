@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
-using QuanLyCuaHangPhuTungXeMay.Properties;
 
 namespace QuanLyCuaHangPhuTungXeMay
 {
-    class HDBHModify
+    class LoaiXeModel
     {
         ConnectToSQL cn = new ConnectToSQL();
         SqlCommand cmd = new SqlCommand();
@@ -17,7 +16,7 @@ namespace QuanLyCuaHangPhuTungXeMay
         public DataTable GetData()
         {
             DataTable dt = new DataTable();
-            cmd.CommandText = "SELECT * FROM HoaDonBanHang";
+            cmd.CommandText = "SELECT * FROM LoaiXe";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cn.Connection;
             try
@@ -36,9 +35,9 @@ namespace QuanLyCuaHangPhuTungXeMay
             return dt;
         }
 
-        public bool TaoMoiHDBH(HDBH hdbh)
+        public bool ThemLoaiXe(LoaiXe lx)
         {
-            cmd.CommandText = "INSERT INTO HoaDonBanHang values ('" + hdbh.MaHD + "','"+hdbh.KhuyenMai+"','"+hdbh.TenPT+"','"+hdbh.ThanhTien+"', '" + hdbh.MaKH + "', '" + hdbh.MaNV + "', '" + hdbh.MaPT + "', '" + hdbh.SoLuong + "', '" + hdbh.ThanhTien + "', '" + hdbh.DonGia + "', convert(date,'" + hdbh.Ngay + "',103))";
+            cmd.CommandText = "INSERT INTO LoaiXe values ('" + lx.Ma + "', N'" + lx.Ten + "', '" + lx.Loai + "', '" + lx.Hang + "', '" + lx.PhanKhoi + "', '" + lx.NamSX + "', '" + lx.NguonNhap + "')";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cn.Connection;
             try
@@ -58,9 +57,30 @@ namespace QuanLyCuaHangPhuTungXeMay
             return false;
         }
 
-        public bool XoaHDBH(String mahd)
+        public bool SuaLoaiXe(LoaiXe lx)
         {
-            cmd.CommandText = "DELETE HoaDonBanHang Where MaHD = '" + mahd + "' ";
+            cmd.CommandText = "UPDATE LoaiXe SET TenThuongGoi = N'" + lx.Ten + "',  Loai ='" + lx.Loai + "', HangXe ='" + lx.Hang + "', PhanKhoi ='" + lx.PhanKhoi + "', NamSanXuat ='" + lx.NamSX + "',  NguonNhap='" + lx.NguonNhap + "' Where MaLX= '" + lx.Ma + "'";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cn.Connection;
+            try
+            {
+                cn.Connect();
+                cmd.ExecuteNonQuery();
+                cn.DisConnect();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                string mex = ex.Message;
+                cmd.Dispose();
+                cn.DisConnect();
+            }
+            return false;
+        }
+
+        public bool XoaLoaiXe(String ma)
+        {
+            cmd.CommandText = "DELETE LoaiXe Where MaLX = '" + ma + "' ";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cn.Connection;
             try
@@ -81,5 +101,3 @@ namespace QuanLyCuaHangPhuTungXeMay
         }
     }
 }
-
-

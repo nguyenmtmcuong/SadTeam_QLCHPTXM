@@ -8,7 +8,7 @@ using System.Data;
 
 namespace QuanLyCuaHangPhuTungXeMay
 {
-    class LoaiXeModify
+    class PhuTungModel
     {
         ConnectToSQL cn = new ConnectToSQL();
         SqlCommand cmd = new SqlCommand();
@@ -16,7 +16,7 @@ namespace QuanLyCuaHangPhuTungXeMay
         public DataTable GetData()
         {
             DataTable dt = new DataTable();
-            cmd.CommandText = "SELECT * FROM LoaiXe";
+            cmd.CommandText = "SELECT * FROM PhuTung";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cn.Connection;
             try
@@ -35,9 +35,9 @@ namespace QuanLyCuaHangPhuTungXeMay
             return dt;
         }
 
-        public bool ThemLoaiXe(LoaiXe lx)
+        public bool ThemPhuTung(PhuTung pt)
         {
-            cmd.CommandText = "INSERT INTO LoaiXe values ('" + lx.Ma + "', N'" + lx.Ten + "', '" + lx.Loai + "', '" + lx.Hang + "', '" + lx.PhanKhoi + "', '" + lx.NamSX + "', '" + lx.NguonNhap + "')";
+            cmd.CommandText = "INSERT INTO PhuTung values ('" + pt.MaPT + "', '" + pt.MaLoai + "', N'" + pt.TenPT + "', N'" + pt.DonVi + "', '" + pt.GiaNhap + "', '" + pt.GiaBan + "', '" + pt.SLTon + "', '" + pt.GhiChu + "')";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cn.Connection;
             try
@@ -57,9 +57,9 @@ namespace QuanLyCuaHangPhuTungXeMay
             return false;
         }
 
-        public bool SuaLoaiXe(LoaiXe lx)
+        public bool SuaPhuTung(PhuTung pt)
         {
-            cmd.CommandText = "UPDATE LoaiXe SET TenThuongGoi = N'" + lx.Ten + "',  Loai ='" + lx.Loai + "', HangXe ='" + lx.Hang + "', PhanKhoi ='" + lx.PhanKhoi + "', NamSanXuat ='" + lx.NamSX + "',  NguonNhap='" + lx.NguonNhap + "' Where MaLX= '" + lx.Ma + "'";
+            cmd.CommandText = "UPDATE PhuTung SET TenPhuTung = N'" + pt.TenPT + "',MaLoaiXe = '" + pt.MaLoai + "',  DonVi =N'" + pt.DonVi + "', GhiChu ='" + pt.GhiChu + "', GiaBan ='" + pt.GiaBan + "', GiaNhap ='" + pt.GiaNhap + "',  SoLuongTon='" + pt.SLTon + "' Where MaPT= '" + pt.MaPT + "'";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cn.Connection;
             try
@@ -78,9 +78,9 @@ namespace QuanLyCuaHangPhuTungXeMay
             return false;
         }
 
-        public bool XoaLoaiXe(String ma)
+        public bool XoaPhuTung(String mapt)
         {
-            cmd.CommandText = "DELETE LoaiXe Where MaLX = '" + ma + "' ";
+            cmd.CommandText = "DELETE PhuTung Where MaPT = '" + mapt + "' ";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cn.Connection;
             try

@@ -1,29 +1,26 @@
-﻿using System.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Data;
+
 
 namespace QuanLyCuaHangPhuTungXeMay
 {
     class HDBHControl
     {
-        HDBHModify HDBHMod = new HDBHModify();
-
+        HDBHModel hdMod = new HDBHModel();
         public DataTable GetData()
         {
-            return HDBHMod.GetData();
+            return hdMod.GetData();
         }
-
-        public bool ThemHD(HDBH hdbh)
+        public bool AddData(HDBH hdObj)
         {
-            return HDBHMod.TaoMoiHDBH(hdbh);
+            return hdMod.AddData(hdObj);
         }
-
-        public bool XoaHD(string mahd)
+        public bool DelData(string ma)
         {
-            return HDBHMod.XoaHDBH(mahd);
+            return hdMod.DelData(ma);
         }
     }
 }

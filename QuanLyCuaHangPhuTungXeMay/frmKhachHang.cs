@@ -14,7 +14,6 @@ namespace QuanLyCuaHangPhuTungXeMay
 {
     public partial class frmKhachHang : Form
     {
-        DataTableTimNhanh dttn = new DataTableTimNhanh();
         KhachHangControl khCtrl = new KhachHangControl();
         KhachHang kh = new KhachHang();
         int flag = 0;
@@ -163,15 +162,6 @@ namespace QuanLyCuaHangPhuTungXeMay
         private void txtNhap_TextChanged(object sender, EventArgs e)
         {
 
-
-            if (txtNhap.Text.Length == 0)
-                dgvKhachHang.DataSource = dttn.TimNhanh("SELECT * FROM KhachHang");
-            else
-            {
-                if (rdnBienSo.Checked)
-                    dgvKhachHang.DataSource = dttn.TimNhanh("Select * from KhachHang where BienSo ='"+txtNhap+"'");
-                else dgvKhachHang.DataSource = dttn.TimNhanh("select * from KhachHang where TenKH LIKE  N'%" + txtNhap + "%'");
-            }
         }
 
     }
