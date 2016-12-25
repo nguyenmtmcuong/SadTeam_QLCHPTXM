@@ -5,161 +5,290 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyCuaHangPhuTungXeMay
+
+namespace QuanLyCuaHangPhuTungXeMay.HDBH
 {
     public partial class frmHDBH : Form
     {
-        KhachHangModel khmod = new KhachHangModel();
-        HDBHControl hdbhctr = new HDBHControl();
-        HDBH hd = new HDBH();
-        int flag=0;
+        HoaDonCtr hdCtr = new HoaDonCtr();
+        ChiTietCtr ctCtr = new ChiTietCtr();
+        PhuTungControl hhctr = new PhuTungControl();
+        DataTable dtDSCT = new System.Data.DataTable();
+        int vitriclick = 0;
+        
         public frmHDBH()
         {
             InitializeComponent();
         }
 
-        private void frmHDBH_Load(object sender, EventArgs e)
+        private void frmHoaDon_Load(object sender, EventArgs e)
+        {
+            Dis_Enl(false);
+            DataTable dt = new System.Data.DataTable();
+            dt = hdCtr.GetData();
+            dtgvDSHD.DataSource = dt;
+            bingding();
+            txtNgayLap.Enabled = false;
+        }
+        private void bingding()
+        {
+            txtMa.DataBindings.Clear();
+            txtMa.DataBindings.Add("Text", dtgvDSHD.DataSource,"MaHD");
+            txtNgayLap.DataBindings.Clear();
+            txtNgayLap.DataBindings.Add("Text", dtgvDSHD.DataSource, "NgayLap");
+            txtNhanVien.DataBindings.Clear();
+            txtNhanVien.DataBindings.Add("Text", dtgvDSHD.DataSource, "TenNV");
+            cmbKhachHang.DataBindings.Clear();
+            cmbKhachHang.DataBindings.Add("Text", dtgvDSHD.DataSource, "TenKH");
+        }
+
+        //private void bingding1()
+        //{
+        //    txtDonGia.DataBindings.Clear();
+        //    txtDonGia.DataBindings.Add("Text", dtgvDSHH.DataSource, "DonGia");
+        //    txtSL.DataBindings.Clear();
+        //    txtSL.DataBindings.Add("Text", dtgvDSHH.DataSource, "SoLuong");
+        //    cmbHH.DataBindings.Clear();
+        //    cmbHH.DataBindings.Add("Text", dtgvDSHH.DataSource, "HangHoa");
+        //    lbThanhTien.DataBindings.Clear();
+        //    lbThanhTien.DataBindings.Add("Text", dtgvDSHH.DataSource, "ThanhTien");
+
+        //}
+
+        private void Dis_Enl(bool e)
+        {
+            txtMa.Enabled = e;
+            txtNhanVien.Enabled = e;
+            cmbKhachHang.Enabled = e;
+            btnAdd.Enabled = !e;
+            btnDel.Enabled = !e;
+            btnPrint.Enabled = !e;
+            btnSave.Enabled = e;
+            btnCancel.Enabled = e;
+            btncham.Enabled = e;
+            btnThem.Enabled = e;
+            btnBot.Enabled = e;
+            cmbHH.Enabled = e;
+            txtSL.Enabled = e;
+        }
+
+        private void LoadcmbKhachHang()
+        { 
+            KhachHangControl khctr = new KhachHangControl();
+            cmbKhachHang.DataSource = khctr.GetData();
+            cmbKhachHang.DisplayMember = "TenKH";
+            cmbKhachHang.ValueMember = "MaKH";
+            cmbKhachHang.SelectedIndex = 0;
+        }
+
+        private void LoadcmbHH()
+        {
+            PhuTungControl hhctr = new PhuTungControl();
+            cmbHH.DataSource = hhctr.GetData();
+            cmbHH.DisplayMember = "TenHang";
+            cmbHH.ValueMember = "MaHang";
+            
+        }
+
+        private void clearData()
+        {
+            txtMa.Text = "";
+            txtNhanVien.Text = "";
+            txtNgayLap.Text = DateTime.Now.Date.ToShortDateString();
+            LoadcmbKhachHang();
+        }
+
+        private void addData(HoaDonObj hdObj)
+        {
+            hdObj.MaHoaDon = txtMa.Text.Trim();
+            hdObj.NgayLap = txtNgayLap.Text.Trim();
+            hdObj.NguoiLap = txtNhanVien.Text.Trim();
+            hdObj.KhachHang = cmbKhachHang.SelectedValue.ToString();
+        }
+
+        private bool checktrung(string mahh)
+        {
+            for (int i = 0; i < dtDSCT.Rows.Count; i++)
+                if (dtDSCT.Rows[i][1].ToString() == mahh)
+                    return true;
+            return false;
+        }
+
+        private void capnhatSL(string mahh, int SL)
+        {
+            for (int i = 0; i < dtDSCT.Rows.Count; i++)
+                if (dtDSCT.Rows[i][1].ToString() == mahh)
+                {
+                    int soluong = int.Parse(dtDSCT.Rows[i][3].ToString())+SL;
+                    dtDSCT.Rows[i][3] = soluong;
+                    double dongia = double.Parse(dtDSCT.Rows[i][2].ToString());
+                    dtDSCT.Rows[i][4] = (dongia*soluong).ToString();
+                    break;
+                }
+        }
+
+        private bool kiemtraSL(string mahh, int sl)
         {
             DataTable dt = new DataTable();
-            dt = hdbhctr.GetData();
-            dgvDanhSachHoaDon.DataSource=dt;
-            //bingding();
+            dt = hhctr.GetData("Where MaHang = '" + cmbHH.SelectedValue.ToString() + "' and SoLuong>= "+sl);
+            if (dt.Rows.Count > 0)
+                return true;
+            return false;
         }
 
-        //private void bingding()
-        //{
-        //    txtMaHD.DataBindings.Clear();
-        //    txtMaHD.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"MaHD");
-        //    cbbBienSo.DataBindings.Clear();
-        //    cbbBienSo.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"BienSo");
-        //    //cbbMaKH.DataBindings.Clear();
-        //    //.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"MaKH");
-        //    cbbMaNV.DataBindings.Clear();
-        //    cbbMaNV.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"MaNV");
-        //    txtNgay.DataBindings.Clear();
-        //    txtNgay.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"NgayLap");
-        //    txtKhuyenMai.DataBindings.Clear();
-        //    txtKhuyenMai.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"KhuyenMai");
-        //    txtThanhTien.DataBindings.Clear();
-        //    txtThanhTien.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"ThanhTien");
-        //    cbbMaPhuTung.DataBindings.Clear();
-        //    cbbMaPhuTung.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"MaPT");
-        //    cbbTenPhuTung.DataBindings.Clear();
-        //    cbbTenPhuTung.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"TenPhuTung");
-        //    txtSoLuong.DataBindings.Clear();
-        //    txtSoLuong.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"SoLuong");
-        //    txtDonGia.DataBindings.Clear();
-        //    txtDonGia.DataBindings.Add("Text",dgvDanhSachHoaDon.DataSource,"DonGia");
-        //}
-
-        private void dis_en(bool e)
+        private void txtMa_TextChanged(object sender, EventArgs e)
         {
-            txtMaHD.Enabled = e;
-            cbbMaNV.Enabled = e;
-            //cbbMaKH.Enabled = e;
-            cbbBienSo.Enabled = e;
-            btnTao.Enabled = !e;
-            btnXoa.Enabled = !e;
-            btnIn.Enabled = !e;
-            btnLuu.Enabled = e;
-            btnHuy.Enabled = e;
-            btnNgayLap.Enabled = e;
-        }
-
-        //private void LoadcbbMaKH()
-        //{
-        //    KhachHangControl khctr = new KhachHangControl();
-        //    cbbMaKH.DataSource = khctr.GetData();
-        //    cbbMaKH.DisplayMember = "MaKH";
-        //    cbbMaKH.ValueMember = "MaKH";
-        //}
-
-        private void cleardata()
-        {
-            txtMaHD.Text = "";
-            txtNgay.Text = "";
-            txtKhuyenMai.Text = "";
-            txtThanhTien.Text = "";
-            txtNgay.Text = DateTime.Now.Date.ToShortDateString();
-            //LoadcbbMaKH();
-        }
-
-        private void adddata(HDBH hd)
-        {
-            hd.MaHoaDon = txtMaHD.Text.Trim();
-            //hd.MaKH = cbbMaKH.SelectedValue.ToString();
-            hd.BienSo = cbbBienSo.SelectedValue.ToString();
-            hd.NguoiLap = cbbMaNV.SelectedValue.ToString();
-            //hd.KhuyenMai = txtKhuyenMai.Text.Trim();
-            //hd.MaPT = cbbMaPhuTung.SelectedValue.ToString();
-            hd.NgayLap = txtNgay.Text.Trim();
-            //hd.KhuyenMai = txtKhuyenMai.Text.Trim();
-            //hd.ThanhTien = Double.Parse(txtThanhTien.Text.Trim());
-            //hd.MaPT = cbbMaPhuTung.SelectedValue.ToString();
-            //hd.SoLuong = Int32.Parse(txtSoLuong.Text.Trim());
-            //hd.DonGia = Int32.Parse(txtDonGia.Text.Trim());
-        }
-
-        
-        private void btnTao_Click(object sender, EventArgs e)
-        {
-            dis_en(true);
-            cleardata();
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnIn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            adddata(hd);
-            if (flag == 0)
+            try
             {
-                if (hdbhctr.AddData(hd))
-                    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                else
-                    MessageBox.Show("Thêm thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DataTable dt = new System.Data.DataTable();
+                dt = ctCtr.GetData(txtMa.Text.Trim());
+                dtgvDSHH.DataSource = dt;
+                
             }
-            frmHDBH_Load(sender, e);
-            dis_en(false);
+            catch
+            {
+                dtgvDSHH.DataSource = null;
+            }
+            //bingding1();
         }
 
-        private void btnHuy_Click(object sender, EventArgs e)
+        private void dtgvDSHH_DataSourceChanged(object sender, EventArgs e)
         {
+            //bingding1();
+        }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Dis_Enl(true);
+            clearData();
+            LoadcmbHH();
+            LoadcmbKhachHang();
+
+            dtDSCT.Rows.Clear();
+            dtDSCT.Columns.Add("MaHD");
+            dtDSCT.Columns.Add("HangHoa");
+            dtDSCT.Columns.Add("DonGia");
+            dtDSCT.Columns.Add("SoLuong");
+            dtDSCT.Columns.Add("ThanhTien");
+
+        }
+
+        private void btncham_Click(object sender, EventArgs e)
+        {
+            txtNgayLap.Enabled = true;
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Bạn chắc chắn muốn xóa hóa đơn này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                if (hdCtr.DelData(txtMa.Text.Trim()))
+                    MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("Xóa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            frmHoaDon_Load(sender, e);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            HoaDonObj hdObj = new HoaDonObj();
+            addData(hdObj);
+            if (hdCtr.AddData(hdObj))
+            {
+                if (ctCtr.AddData(dtDSCT) && hhctr.UpdSL(dtDSCT))
+                    MessageBox.Show("Thêm hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("Thêm chi tiết không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                MessageBox.Show("Thêm hóa đơn không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            frmHoaDon_Load(sender,e);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Bạn chắc chắn muốn hủy thao tác đang làm?", "Xác nhận hủy", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+                frmHoaDon_Load(sender, e);
+            else
+                return;
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chức năng đang đc nâng cấp");
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(txtMa.Text))
+            {
+                if(kiemtraSL(cmbHH.SelectedValue.ToString(), int.Parse(txtSL.Text.Trim())))
+                {
+                    if (!checktrung(cmbHH.SelectedValue.ToString()))
+                    {
+                        DataRow dr = dtDSCT.NewRow();
+                        dr[0] = txtMa.Text.Trim();
+                        dr[1] = cmbHH.SelectedValue.ToString();
+                        dr[2] = txtDonGia.Text;
+                        dr[3] = txtSL.Text;
+                        dr[4] = (double.Parse(txtDonGia.Text) * int.Parse(txtSL.Text)).ToString();
+                        dtDSCT.Rows.Add(dr);
+                    }
+                    else
+                    {
+                        capnhatSL(cmbHH.SelectedValue.ToString(), int.Parse(txtSL.Text));
+                    }
+                dtgvDSHH.DataSource = dtDSCT;
+                }
+                else
+                {
+                    MessageBox.Show("Số lượng không dủ", "Lỗi");
+                    txtSL.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Mã hóa đơn không được trống", "Lỗi");
+                txtMa.Focus();
+            }
         }
 
         private void btnBot_Click(object sender, EventArgs e)
         {
-
+            if (vitriclick < dtDSCT.Rows.Count)
+            {
+                dtDSCT.Rows.RemoveAt(vitriclick);
+                dtgvDSHH.DataSource = dtDSCT;
+            }
         }
 
-        private void dgvDanhSachPhuTung_DataSourceChanged(object sender, EventArgs e)
+        private void cmbHH_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //bingding();
+            DataTable dt = new DataTable();
+            dt = hhctr.GetData("Where MaHang = '" + cmbHH.SelectedValue.ToString() + "'");
+            if (dt.Rows.Count > 0)
+            {
+                double gia = double.Parse(dt.Rows[0][2].ToString());
+
+                txtDonGia.Text = (gia * 1.1).ToString();
+
+                lbThanhTien.Text = (double.Parse(txtDonGia.Text) * int.Parse(txtSL.Text)).ToString();
+            }
         }
 
-        private void cbbMaKH_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void txtSL_TextChanged(object sender, EventArgs e)
         {
-            //DataTable dtkh = khmod.GetData_fromIDKH(cbbMaKH.Text);
-            //cbbBienSo.Text = dtkh.Rows[0]["BienSo"].ToString();
+            lbThanhTien.Text = (double.Parse(txtDonGia.Text) * int.Parse(txtSL.Text)).ToString();
         }
 
-
+        private void dtgvDSHH_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            vitriclick = e.RowIndex;
+        }
     }
 }

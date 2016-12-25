@@ -60,6 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectToSQL.cs" />
+    <Compile Include="CTHDBHClass.cs" />
+    <Compile Include="CTHDBHControl.cs" />
+    <Compile Include="CTHDBHModel.cs" />
     <Compile Include="frmHDBH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +99,9 @@
     <Compile Include="frmPhuTung.Designer.cs">
       <DependentUpon>frmPhuTung.cs</DependentUpon>
     </Compile>
+    <Compile Include="HDBHClass.cs" />
+    <Compile Include="HDBHControl.cs" />
+    <Compile Include="HDBHModel.cs" />
     <Compile Include="KhachHangClass.cs" />
     <Compile Include="KhachHangControl.cs" />
     <Compile Include="KhachHangModel.cs" />
