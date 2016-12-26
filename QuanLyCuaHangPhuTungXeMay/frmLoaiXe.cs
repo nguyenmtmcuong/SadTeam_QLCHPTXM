@@ -60,7 +60,7 @@ namespace QuanLyCuaHangPhuTungXeMay
             btnLuu.Enabled = e;
             btnHuy.Enabled = e;
             btnThem.Enabled = !e;
-            btnHuy.Enabled = !e;
+            //btnHuy.Enabled = !e;
             btnXoa.Enabled = !e;
         }
 

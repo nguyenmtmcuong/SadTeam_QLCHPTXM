@@ -35,10 +35,11 @@ namespace QuanLyCuaHangPhuTungXeMay
             }
             return dt;
         }
-        public DataTable GetData_fromIDKH(string MaKH)
+
+        public DataTable GetData_Tim(string sql)
         {
             DataTable dt = new DataTable();
-            cmd.CommandText = "SELECT * FROM KhachHang WHERE MaKH = '" + MaKH + "'";
+            cmd.CommandText = "sql";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cn.Connection;
             try
