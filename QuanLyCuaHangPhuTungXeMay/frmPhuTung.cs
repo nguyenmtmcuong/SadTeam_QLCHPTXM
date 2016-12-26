@@ -25,9 +25,9 @@ namespace QuanLyCuaHangPhuTungXeMay
 
         private void frmPhuTung_Load(object sender, EventArgs e)
         {
-            //DataTable dtpt = new DataTable();
-            //dtpt = ptCtrl.GetData();
-            //dgvPhuTung.DataSource = dtpt;
+            DataTable dtpt = new DataTable();
+            dtpt = ptCtrl.GetData();
+            dgvPhuTung.DataSource = dtpt;
             bingding();
             dis_en(false);
         }
@@ -163,8 +163,6 @@ namespace QuanLyCuaHangPhuTungXeMay
             dtpt = ptCtrl.GetData();
             dgvPhuTung.DataSource = dtpt;
         }
-
-
 
 
     }

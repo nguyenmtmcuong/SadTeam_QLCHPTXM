@@ -14,7 +14,9 @@ namespace QuanLyCuaHangPhuTungXeMay
 {
     public partial class frmKhachHang : Form
     {
+        ConnectToSQL cn = new ConnectToSQL();
         KhachHangControl khCtrl = new KhachHangControl();
+        KhachHangModel khmod = new KhachHangModel();
         KhachHang kh = new KhachHang();
         int flag = 0;
 
@@ -51,6 +53,7 @@ namespace QuanLyCuaHangPhuTungXeMay
             txtGhiChu.DataBindings.Clear();
             txtGhiChu.DataBindings.Add("Text", dgvKhachHang.DataSource, "GhiChu");
         }
+
 
         void dis_en(bool e)
         {
@@ -93,6 +96,8 @@ namespace QuanLyCuaHangPhuTungXeMay
             txtSDT.Text = "";
             txtGhiChu.Text = "";
         }
+
+
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -159,10 +164,20 @@ namespace QuanLyCuaHangPhuTungXeMay
             }
         }
 
-        private void txtNhap_TextChanged(object sender, EventArgs e)
-        {
+        //public void txtNhap_TextChanged(object sender, EventArgs e)
+        //{
+        //    string sql = " select * from KhachHang where";
+        //    if (rdnBienSo.Checked == true)
+        //    {
+        //        sql += " BienSo LIKE ' 	% " + txtNhap.Text + "%'";
 
-        }
+        //    }
+        //    dgvKhachHang.DataSource = khmod.GetData_Tim(sql);
+
+            
+        //}
+
 
     }
+    
 }
