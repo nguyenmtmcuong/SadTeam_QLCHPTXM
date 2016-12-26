@@ -35,3 +35,4 @@ C:\Users\Eric\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanL
 C:\Users\Eric\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.frmHDBH.resources
 C:\Users\Eric\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QL_BanHang.View.frmHoaDon.resources
 C:\Users\Eric\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.View.frmHDBH.resources
+C:\Users\Eric\Desktop\SadTeam_QLCHPTXM\QuanLyCuaHangPhuTungXeMay\obj\Debug\QuanLyCuaHangPhuTungXeMay.HDBH.frmHDBH.resources
