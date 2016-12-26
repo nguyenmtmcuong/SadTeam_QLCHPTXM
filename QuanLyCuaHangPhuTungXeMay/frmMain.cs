@@ -54,8 +54,8 @@ namespace QuanLyCuaHangPhuTungXeMay
 
         private void hóaĐơnBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmHDBH formhdbh = new frmHDBH();
-            formhdbh.Show();
+            
+
         }
 
 
