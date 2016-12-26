@@ -60,12 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectToSQL.cs" />
-    <Compile Include="frmHangHoa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHangHoa.Designer.cs">
-      <DependentUpon>frmHangHoa.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,9 +104,6 @@
     <Compile Include="PhuTungModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmHangHoa.resx">
-      <DependentUpon>frmHangHoa.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
