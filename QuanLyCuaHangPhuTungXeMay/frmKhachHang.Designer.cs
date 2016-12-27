@@ -32,7 +32,6 @@
             this.txtDiemTichLuy = new System.Windows.Forms.TextBox();
             this.txtSoLanSuaChua = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
-            this.txtLoaiXe = new System.Windows.Forms.TextBox();
             this.txtBienSo = new System.Windows.Forms.TextBox();
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.txtMaKH = new System.Windows.Forms.TextBox();
@@ -54,6 +53,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.cbbLoaiXe = new System.Windows.Forms.ComboBox();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
@@ -121,21 +121,6 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(118, 26);
             this.txtSDT.TabIndex = 1;
-            // 
-            // txtLoaiXe
-            // 
-            this.txtLoaiXe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLoaiXe.BackColor = System.Drawing.SystemColors.Window;
-            this.txtLoaiXe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLoaiXe.Enabled = false;
-            this.txtLoaiXe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoaiXe.Location = new System.Drawing.Point(127, 118);
-            this.txtLoaiXe.Margin = new System.Windows.Forms.Padding(1);
-            this.txtLoaiXe.Name = "txtLoaiXe";
-            this.txtLoaiXe.Size = new System.Drawing.Size(118, 26);
-            this.txtLoaiXe.TabIndex = 1;
             // 
             // txtBienSo
             // 
@@ -430,11 +415,11 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.cbbLoaiXe);
             this.groupBox1.Controls.Add(this.txtGhiChu);
             this.groupBox1.Controls.Add(this.txtDiemTichLuy);
             this.groupBox1.Controls.Add(this.txtSoLanSuaChua);
             this.groupBox1.Controls.Add(this.txtSDT);
-            this.groupBox1.Controls.Add(this.txtLoaiXe);
             this.groupBox1.Controls.Add(this.txtBienSo);
             this.groupBox1.Controls.Add(this.txtTenKH);
             this.groupBox1.Controls.Add(this.label9);
@@ -488,6 +473,14 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Ghi chú";
             // 
+            // cbbLoaiXe
+            // 
+            this.cbbLoaiXe.FormattingEnabled = true;
+            this.cbbLoaiXe.Location = new System.Drawing.Point(127, 119);
+            this.cbbLoaiXe.Name = "cbbLoaiXe";
+            this.cbbLoaiXe.Size = new System.Drawing.Size(118, 28);
+            this.cbbLoaiXe.TabIndex = 2;
+            // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -518,7 +511,6 @@
         private System.Windows.Forms.TextBox txtDiemTichLuy;
         private System.Windows.Forms.TextBox txtSoLanSuaChua;
         private System.Windows.Forms.TextBox txtSDT;
-        private System.Windows.Forms.TextBox txtLoaiXe;
         private System.Windows.Forms.TextBox txtBienSo;
         private System.Windows.Forms.TextBox txtTenKH;
         private System.Windows.Forms.TextBox txtMaKH;
@@ -540,5 +532,6 @@
         private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgvKhachHang;
+        private System.Windows.Forms.ComboBox cbbLoaiXe;
     }
 }

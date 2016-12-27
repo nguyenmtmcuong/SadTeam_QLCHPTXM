@@ -36,8 +36,8 @@ namespace QuanLyCuaHangPhuTungXeMay
         {
             txtMaPT.DataBindings.Clear();
             txtMaPT.DataBindings.Add("Text", dgvPhuTung.DataSource, "MaPT");
-            txtMaLX.DataBindings.Clear();
-            txtMaLX.DataBindings.Add("Text", dgvPhuTung.DataSource, "MaLoaiXe");
+            cbbLoaiXe.DataBindings.Clear();
+            cbbLoaiXe.DataBindings.Add("Text", dgvPhuTung.DataSource, "MaLoaiXe");
             txtTenPT.DataBindings.Clear();
             txtTenPT.DataBindings.Add("Text", dgvPhuTung.DataSource, "TenPhuTung");
             txtDonVi.DataBindings.Clear();
@@ -55,7 +55,7 @@ namespace QuanLyCuaHangPhuTungXeMay
         void dis_en(bool e)
         {
             txtMaPT.Enabled = e;
-            txtMaLX.Enabled = e;
+            cbbLoaiXe.Enabled = e;
             txtTenPT.Enabled = e;
             txtDonVi.Enabled = e;
             txtGiaNhap.Enabled = e;
@@ -73,7 +73,7 @@ namespace QuanLyCuaHangPhuTungXeMay
         {
             pt.MaPT = txtMaPT.Text.Trim();
             pt.TenPT = txtTenPT.Text.Trim();
-            pt.MaLoai = txtMaLX.Text.Trim();
+            pt.MaLoai = cbbLoaiXe.SelectedValue.ToString();
             pt.DonVi = txtDonVi.Text.Trim();
             pt.GiaNhap = int.Parse(txtGiaNhap.Text.Trim());
             pt.GiaBan = int.Parse(txtGiaBan.Text.Trim());
@@ -81,16 +81,26 @@ namespace QuanLyCuaHangPhuTungXeMay
             pt.GhiChu = txtGhiChu.Text.Trim();
         }
 
+        private void LoadcmbLoaiXe()
+        {
+            LoaiXeControl lxctr = new LoaiXeControl();
+            cbbLoaiXe.DataSource = lxctr.GetData();
+            cbbLoaiXe.DisplayMember = "TenThuongGoi";
+            cbbLoaiXe.ValueMember = "MaLX";
+            cbbLoaiXe.SelectedIndex = 0;
+        }
+
         void XoaDuLieu()
         {
             txtMaPT.Text = "";
-            txtMaLX.Text = "";
+            cbbLoaiXe.Text = "";
             txtTenPT.Text = "";
             txtDonVi.Text = "";
             txtGiaNhap.Text = "";
             txtGiaBan.Text = "";
             txtSoLuongTon.Text = "";
             txtGhiChu.Text = "";
+            LoadcmbLoaiXe();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
