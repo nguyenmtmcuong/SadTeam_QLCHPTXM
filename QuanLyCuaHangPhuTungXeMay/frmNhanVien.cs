@@ -47,12 +47,7 @@ namespace QuanLyCuaHangPhuTungXeMay
             txtSDT.DataBindings.Add("Text", dgvNhanVien.DataSource, "SDT");
             txtGhiChu.DataBindings.Clear();
             txtGhiChu.DataBindings.Add("Text", dgvNhanVien.DataSource, "GhiChu");
-        }
-
-        private void btnTim_Click(object sender, EventArgs e)
-        {
-
-        }
+        }      
 
         void dis_en(bool e)
         {
@@ -81,6 +76,15 @@ namespace QuanLyCuaHangPhuTungXeMay
             nv.GhiChu = txtGhiChu.Text.Trim();
         }
 
+        private void LoadcmbChucVu()
+        {
+            NhanVienControl nvctr = new NhanVienControl();
+            cbbChucVu.DataSource = nvctr.GetData();
+            cbbChucVu.DisplayMember = "ChucVu";
+            cbbChucVu.ValueMember = "ChucVu";
+            cbbChucVu.SelectedIndex = 0;
+        }
+
         void cleardata()
         {
             txtMaNV.Text = "";
@@ -90,6 +94,7 @@ namespace QuanLyCuaHangPhuTungXeMay
             txtDiaChi.Text = "";
             txtSDT.Text = "";
             txtGhiChu.Text = "";
+            LoadcmbChucVu();
         }
 
         private void btnThem_Click(object sender, EventArgs e)

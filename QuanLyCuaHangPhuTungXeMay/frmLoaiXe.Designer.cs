@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbNguonNhap = new System.Windows.Forms.ComboBox();
+            this.cbbPhanKhoi = new System.Windows.Forms.ComboBox();
+            this.cbbHangXe = new System.Windows.Forms.ComboBox();
+            this.cbbLoai = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -36,12 +40,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtLoai = new System.Windows.Forms.TextBox();
             this.txtTenThuongGoi = new System.Windows.Forms.TextBox();
-            this.txtNguonNhap = new System.Windows.Forms.TextBox();
             this.txtNamSanXuat = new System.Windows.Forms.TextBox();
-            this.txtPhanKhoi = new System.Windows.Forms.TextBox();
-            this.txtHangXe = new System.Windows.Forms.TextBox();
             this.txtMaLX = new System.Windows.Forms.TextBox();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
@@ -63,6 +63,10 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.cbbNguonNhap);
+            this.groupBox1.Controls.Add(this.cbbPhanKhoi);
+            this.groupBox1.Controls.Add(this.cbbHangXe);
+            this.groupBox1.Controls.Add(this.cbbLoai);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -70,12 +74,8 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtLoai);
             this.groupBox1.Controls.Add(this.txtTenThuongGoi);
-            this.groupBox1.Controls.Add(this.txtNguonNhap);
             this.groupBox1.Controls.Add(this.txtNamSanXuat);
-            this.groupBox1.Controls.Add(this.txtPhanKhoi);
-            this.groupBox1.Controls.Add(this.txtHangXe);
             this.groupBox1.Controls.Add(this.txtMaLX);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -84,6 +84,38 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin xe";
+            // 
+            // cbbNguonNhap
+            // 
+            this.cbbNguonNhap.FormattingEnabled = true;
+            this.cbbNguonNhap.Location = new System.Drawing.Point(135, 337);
+            this.cbbNguonNhap.Name = "cbbNguonNhap";
+            this.cbbNguonNhap.Size = new System.Drawing.Size(189, 28);
+            this.cbbNguonNhap.TabIndex = 8;
+            // 
+            // cbbPhanKhoi
+            // 
+            this.cbbPhanKhoi.FormattingEnabled = true;
+            this.cbbPhanKhoi.Location = new System.Drawing.Point(135, 231);
+            this.cbbPhanKhoi.Name = "cbbPhanKhoi";
+            this.cbbPhanKhoi.Size = new System.Drawing.Size(189, 28);
+            this.cbbPhanKhoi.TabIndex = 7;
+            // 
+            // cbbHangXe
+            // 
+            this.cbbHangXe.FormattingEnabled = true;
+            this.cbbHangXe.Location = new System.Drawing.Point(135, 179);
+            this.cbbHangXe.Name = "cbbHangXe";
+            this.cbbHangXe.Size = new System.Drawing.Size(189, 28);
+            this.cbbHangXe.TabIndex = 6;
+            // 
+            // cbbLoai
+            // 
+            this.cbbLoai.FormattingEnabled = true;
+            this.cbbLoai.Location = new System.Drawing.Point(135, 125);
+            this.cbbLoai.Name = "cbbLoai";
+            this.cbbLoai.Size = new System.Drawing.Size(189, 28);
+            this.cbbLoai.TabIndex = 5;
             // 
             // label7
             // 
@@ -148,14 +180,6 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Mã loại xe";
             // 
-            // txtLoai
-            // 
-            this.txtLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoai.Location = new System.Drawing.Point(135, 127);
-            this.txtLoai.Name = "txtLoai";
-            this.txtLoai.Size = new System.Drawing.Size(189, 26);
-            this.txtLoai.TabIndex = 3;
-            // 
             // txtTenThuongGoi
             // 
             this.txtTenThuongGoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -164,14 +188,6 @@
             this.txtTenThuongGoi.Size = new System.Drawing.Size(189, 26);
             this.txtTenThuongGoi.TabIndex = 3;
             // 
-            // txtNguonNhap
-            // 
-            this.txtNguonNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNguonNhap.Location = new System.Drawing.Point(135, 333);
-            this.txtNguonNhap.Name = "txtNguonNhap";
-            this.txtNguonNhap.Size = new System.Drawing.Size(189, 26);
-            this.txtNguonNhap.TabIndex = 3;
-            // 
             // txtNamSanXuat
             // 
             this.txtNamSanXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,22 +195,6 @@
             this.txtNamSanXuat.Name = "txtNamSanXuat";
             this.txtNamSanXuat.Size = new System.Drawing.Size(189, 26);
             this.txtNamSanXuat.TabIndex = 3;
-            // 
-            // txtPhanKhoi
-            // 
-            this.txtPhanKhoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhanKhoi.Location = new System.Drawing.Point(135, 227);
-            this.txtPhanKhoi.Name = "txtPhanKhoi";
-            this.txtPhanKhoi.Size = new System.Drawing.Size(189, 26);
-            this.txtPhanKhoi.TabIndex = 3;
-            // 
-            // txtHangXe
-            // 
-            this.txtHangXe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHangXe.Location = new System.Drawing.Point(135, 175);
-            this.txtHangXe.Name = "txtHangXe";
-            this.txtHangXe.Size = new System.Drawing.Size(189, 26);
-            this.txtHangXe.TabIndex = 3;
             // 
             // txtMaLX
             // 
@@ -266,6 +266,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.groupBox3.Controls.Add(this.btnXoa);
             this.groupBox3.Controls.Add(this.btnThoat);
             this.groupBox3.Controls.Add(this.btnThem);
@@ -292,6 +293,9 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.Controls.Add(this.dgvLoaiXe);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(371, 12);
@@ -333,12 +337,8 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtLoai;
         private System.Windows.Forms.TextBox txtTenThuongGoi;
-        private System.Windows.Forms.TextBox txtNguonNhap;
         private System.Windows.Forms.TextBox txtNamSanXuat;
-        private System.Windows.Forms.TextBox txtPhanKhoi;
-        private System.Windows.Forms.TextBox txtHangXe;
         private System.Windows.Forms.TextBox txtMaLX;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -356,5 +356,9 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dgvLoaiXe;
         private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.ComboBox cbbNguonNhap;
+        private System.Windows.Forms.ComboBox cbbPhanKhoi;
+        private System.Windows.Forms.ComboBox cbbHangXe;
+        private System.Windows.Forms.ComboBox cbbLoai;
     }
 }

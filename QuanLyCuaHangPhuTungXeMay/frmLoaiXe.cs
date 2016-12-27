@@ -36,27 +36,27 @@ namespace QuanLyCuaHangPhuTungXeMay
             txtMaLX.DataBindings.Add("Text", dgvLoaiXe.DataSource, "MaLX");
             txtTenThuongGoi.DataBindings.Clear();
             txtTenThuongGoi.DataBindings.Add("Text", dgvLoaiXe.DataSource, "TenThuongGoi");
-            txtLoai.DataBindings.Clear();
-            txtLoai.DataBindings.Add("Text", dgvLoaiXe.DataSource, "Loai");
-            txtHangXe.DataBindings.Clear();
-            txtHangXe.DataBindings.Add("Text", dgvLoaiXe.DataSource, "HangXe");
-            txtPhanKhoi.DataBindings.Clear();
-            txtPhanKhoi.DataBindings.Add("Text", dgvLoaiXe.DataSource, "PhanKhoi");
+            cbbLoai.DataBindings.Clear();
+            cbbLoai.DataBindings.Add("Text", dgvLoaiXe.DataSource, "Loai");
+            cbbHangXe.DataBindings.Clear();
+            cbbHangXe.DataBindings.Add("Text", dgvLoaiXe.DataSource, "HangXe");
+            cbbPhanKhoi.DataBindings.Clear();
+            cbbPhanKhoi.DataBindings.Add("Text", dgvLoaiXe.DataSource, "PhanKhoi");
             txtNamSanXuat.DataBindings.Clear();
             txtNamSanXuat.DataBindings.Add("Text", dgvLoaiXe.DataSource, "NamSanXuat");
-            txtNguonNhap.DataBindings.Clear();
-            txtNguonNhap.DataBindings.Add("Text", dgvLoaiXe.DataSource, "NguonNhap");
+            cbbNguonNhap.DataBindings.Clear();
+            cbbNguonNhap.DataBindings.Add("Text", dgvLoaiXe.DataSource, "NguonNhap");
         }
 
         void dis_en(bool e)
         {
             txtMaLX.Enabled = e;
             txtTenThuongGoi.Enabled = e;
-            txtLoai.Enabled = e;
-            txtHangXe.Enabled = e;
-            txtPhanKhoi.Enabled = e;
+            cbbLoai.Enabled = e;
+            cbbHangXe.Enabled = e;
+            cbbPhanKhoi.Enabled = e;
             txtNamSanXuat.Enabled = e;
-            txtNguonNhap.Enabled = e;
+            cbbNguonNhap.Enabled = e;
             btnLuu.Enabled = e;
             btnHuy.Enabled = e;
             btnThem.Enabled = !e;
@@ -68,22 +68,62 @@ namespace QuanLyCuaHangPhuTungXeMay
         {
             lx.Ma = txtMaLX.Text.Trim();
             lx.Ten = txtTenThuongGoi.Text.Trim();
-            lx.Loai = txtLoai.Text.Trim();
-            lx.Hang = txtHangXe.Text.Trim();
-            lx.PhanKhoi = int.Parse(txtPhanKhoi.Text.Trim());
+            lx.Loai = cbbLoai.SelectedValue.ToString();
+            lx.Hang = cbbHangXe.SelectedValue.ToString();
+            lx.PhanKhoi = int.Parse(cbbPhanKhoi.SelectedValue.ToString());
             lx.NamSX = int.Parse(txtNamSanXuat.Text.Trim());
-            lx.NguonNhap = txtNguonNhap.Text.Trim();
+            lx.NguonNhap = cbbNguonNhap.SelectedValue.ToString();
+        }
+
+        private void LoadcmbNguonNhap()
+        {
+            LoaiXeControl lxctr = new LoaiXeControl();
+            cbbNguonNhap.DataSource = lxctr.GetData();
+            cbbNguonNhap.DisplayMember = "NguonNhap";
+            cbbNguonNhap.ValueMember = "NguonNhap";
+            cbbNguonNhap.SelectedIndex = 0;
+        }
+
+        private void LoadcmbPhanKhoi()
+        {
+            LoaiXeControl lxctr = new LoaiXeControl();
+            cbbPhanKhoi.DataSource = lxctr.GetData();
+            cbbPhanKhoi.DisplayMember = "PhanKhoi";
+            cbbPhanKhoi.ValueMember = "PhanKhoi";
+            cbbPhanKhoi.SelectedIndex = 0;
+        }
+
+        private void LoadcmbHang()
+        {
+            LoaiXeControl lxctr = new LoaiXeControl();
+            cbbHangXe.DataSource = lxctr.GetData();
+            cbbHangXe.DisplayMember = "HangXe";
+            cbbHangXe.ValueMember = "HangXe";
+            cbbHangXe.SelectedIndex = 0;
+        }
+
+        private void LoadcmbLoai()
+        {
+            LoaiXeControl lxctr = new LoaiXeControl();
+            cbbLoai.DataSource = lxctr.GetData();
+            cbbLoai.DisplayMember = "Loai";
+            cbbLoai.ValueMember = "Loai";
+            cbbLoai.SelectedIndex = 0;
         }
 
         void cleardata()
         {
             txtMaLX.Text = "";
             txtTenThuongGoi.Text = "";
-            txtLoai.Text = "";
-            txtHangXe.Text = "";
-            txtPhanKhoi.Text = "";
+            cbbLoai.Text = "";
+            cbbHangXe.Text = "";
+            cbbPhanKhoi.Text = "";
             txtNamSanXuat.Text = "";
-            txtNguonNhap.Text = "";
+            cbbNguonNhap.Text = "";
+            LoadcmbHang();
+            LoadcmbLoai();
+            LoadcmbPhanKhoi();
+            LoadcmbNguonNhap();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -150,13 +190,5 @@ namespace QuanLyCuaHangPhuTungXeMay
                 this.Close();
             }
         }
-
-
-
-
-
-
-
-
     }
 }

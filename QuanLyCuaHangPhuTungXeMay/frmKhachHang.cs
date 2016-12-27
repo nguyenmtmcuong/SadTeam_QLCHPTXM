@@ -40,8 +40,8 @@ namespace QuanLyCuaHangPhuTungXeMay
             txtMaKH.DataBindings.Add("Text", dgvKhachHang.DataSource, "MaKH");
             txtTenKH.DataBindings.Clear();
             txtTenKH.DataBindings.Add("Text", dgvKhachHang.DataSource, "TenKH");
-            txtLoaiXe.DataBindings.Clear();
-            txtLoaiXe.DataBindings.Add("Text", dgvKhachHang.DataSource, "MaLoaiXe");
+            cbbLoaiXe.DataBindings.Clear();
+            cbbLoaiXe.DataBindings.Add("Text", dgvKhachHang.DataSource, "MaLoaiXe");
             txtBienSo.DataBindings.Clear();
             txtBienSo.DataBindings.Add("Text", dgvKhachHang.DataSource, "BienSo");
             txtSoLanSuaChua.DataBindings.Clear();
@@ -54,13 +54,12 @@ namespace QuanLyCuaHangPhuTungXeMay
             txtGhiChu.DataBindings.Add("Text", dgvKhachHang.DataSource, "GhiChu");
         }
 
-
         void dis_en(bool e)
         {
             txtMaKH.Enabled = e;
             txtTenKH.Enabled = e;
             txtSoLanSuaChua.Enabled = e;
-            txtLoaiXe.Enabled = e;
+            cbbLoaiXe.Enabled = e;
             txtSDT.Enabled = e;
             txtDiemTichLuy.Enabled = e;
             txtSoLanSuaChua.Enabled = e;
@@ -77,7 +76,7 @@ namespace QuanLyCuaHangPhuTungXeMay
         {
             kh.Ma = txtMaKH.Text.Trim();
             kh.Ten = txtTenKH.Text.Trim();
-            kh.MaLoaiXe = txtLoaiXe.Text.Trim();
+            kh.MaLoaiXe = cbbLoaiXe.SelectedValue.ToString();
             kh.BienSo = txtBienSo.Text.Trim();
             kh.DiemTichLuy = int.Parse(txtDiemTichLuy.Text.Trim());
             kh.SoLanSuaChua = int.Parse(txtSoLanSuaChua.Text.Trim());
@@ -85,19 +84,27 @@ namespace QuanLyCuaHangPhuTungXeMay
             kh.GhiChu = txtGhiChu.Text.Trim();
         }
 
+        private void LoadcmbKhachHang()
+        {
+            LoaiXeControl lxctr = new LoaiXeControl();
+            cbbLoaiXe.DataSource = lxctr.GetData();
+            cbbLoaiXe.DisplayMember = "TenThuongGoi";
+            cbbLoaiXe.ValueMember = "MaLX";
+            cbbLoaiXe.SelectedIndex = 0;
+        }
+
         void cleardata()
         {
             txtMaKH.Text = "";
             txtTenKH.Text = "";
-            txtLoaiXe.Text = "";
+            cbbLoaiXe.Text = "";
             txtBienSo.Text = "";
             txtDiemTichLuy.Text = "";
             txtSoLanSuaChua.Text = "";
             txtSDT.Text = "";
             txtGhiChu.Text = "";
+            LoadcmbKhachHang();
         }
-
-
 
         private void btnThem_Click(object sender, EventArgs e)
         {
