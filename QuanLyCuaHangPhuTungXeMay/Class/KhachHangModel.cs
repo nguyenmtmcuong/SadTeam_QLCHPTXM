@@ -36,6 +36,28 @@ namespace QuanLyCuaHangPhuTungXeMay
             return dt;
         }
 
+        public DataTable GetDataTim(string sql)
+        {
+            DataTable dt = new DataTable();
+            cmd.CommandText = "select * from KhachHang where BienSo like '%" + sql + "%'";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cn.Connection;
+            try
+            {
+                cn.Connect();
+                SqlDataAdapter _da = new SqlDataAdapter(cmd);
+                _da.Fill(dt);
+                cn.DisConnect();
+            }
+            catch (Exception ex)
+            {
+                string mex = ex.Message;
+                cmd.Dispose();
+                cn.DisConnect();
+            }
+            return dt;
+        }
+
         public DataTable GetData_Tim(string sql)
         {
             DataTable dt = new DataTable();

@@ -52,10 +52,14 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvLoaiXe = new System.Windows.Forms.DataGridView();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnTim = new System.Windows.Forms.Button();
+            this.txtTim = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiXe)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -294,7 +298,7 @@
             this.groupBox3.Controls.Add(this.btnLuu);
             this.groupBox3.Controls.Add(this.btnSua);
             this.groupBox3.Controls.Add(this.btnHuy);
-            this.groupBox3.Location = new System.Drawing.Point(276, 643);
+            this.groupBox3.Location = new System.Drawing.Point(590, 639);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -341,11 +345,41 @@
             this.dgvLoaiXe.Size = new System.Drawing.Size(943, 544);
             this.dgvLoaiXe.TabIndex = 0;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnTim);
+            this.groupBox4.Controls.Add(this.txtTim);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(31, 639);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(511, 108);
+            this.groupBox4.TabIndex = 8;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Tìm kiếm";
+            // 
+            // btnTim
+            // 
+            this.btnTim.Location = new System.Drawing.Point(392, 36);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(99, 52);
+            this.btnTim.TabIndex = 1;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // txtTim
+            // 
+            this.txtTim.Location = new System.Drawing.Point(47, 45);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Size = new System.Drawing.Size(326, 35);
+            this.txtTim.TabIndex = 0;
+            // 
             // frmLoaiXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1526, 788);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
@@ -359,6 +393,8 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiXe)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -389,5 +425,8 @@
         private System.Windows.Forms.ComboBox cbbPhanKhoi;
         private System.Windows.Forms.ComboBox cbbHangXe;
         private System.Windows.Forms.ComboBox cbbLoai;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.TextBox txtTim;
     }
 }

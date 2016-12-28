@@ -35,6 +35,28 @@ namespace QuanLyCuaHangPhuTungXeMay
             return dt;
         }
 
+        public DataTable GetDataTim(string sql)
+        {
+            DataTable dt = new DataTable();
+            cmd.CommandText = "select * from PhuTung where TenPhuTung like '%" + sql + "%'";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cn.Connection;
+            try
+            {
+                cn.Connect();
+                SqlDataAdapter _da = new SqlDataAdapter(cmd);
+                _da.Fill(dt);
+                cn.DisConnect();
+            }
+            catch (Exception ex)
+            {
+                string mex = ex.Message;
+                cmd.Dispose();
+                cn.DisConnect();
+            }
+            return dt;
+        }
+
         public bool ThemPhuTung(PhuTung pt)
         {
             cmd.CommandText = "INSERT INTO PhuTung values ('" + pt.MaPT + "', '" + pt.MaLoai + "', N'" + pt.TenPT + "', N'" + pt.DonVi + "', '" + pt.GiaNhap + "', '" + pt.GiaBan + "', '" + pt.SLTon + "', '" + pt.GhiChu + "')";

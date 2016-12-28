@@ -35,6 +35,28 @@ namespace QuanLyCuaHangPhuTungXeMay
             return dt;
         }
 
+        public DataTable GetDataTim(string sql)
+        {
+            DataTable dt = new DataTable();
+            cmd.CommandText = "select * from LoaiXe where TenThuongGoi like '%" + sql + "%'";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cn.Connection;
+            try
+            {
+                cn.Connect();
+                SqlDataAdapter _da = new SqlDataAdapter(cmd);
+                _da.Fill(dt);
+                cn.DisConnect();
+            }
+            catch (Exception ex)
+            {
+                string mex = ex.Message;
+                cmd.Dispose();
+                cn.DisConnect();
+            }
+            return dt;
+        }
+
         public bool ThemLoaiXe(LoaiXe lx)
         {
             cmd.CommandText = "INSERT INTO LoaiXe values ('" + lx.Ma + "', N'" + lx.Ten + "', '" + lx.Loai + "', '" + lx.Hang + "', '" + lx.PhanKhoi + "', '" + lx.NamSX + "', '" + lx.NguonNhap + "')";

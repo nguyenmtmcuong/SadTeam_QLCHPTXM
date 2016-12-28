@@ -174,6 +174,11 @@ namespace QuanLyCuaHangPhuTungXeMay
             dgvPhuTung.DataSource = dtpt;
         }
 
+        private void btnTim_Click_1(object sender, EventArgs e)
+        {
+            dgvPhuTung.DataSource = ptCtrl.GetDataTim(txtTim.Text);
+        }
+
 
     }
 }

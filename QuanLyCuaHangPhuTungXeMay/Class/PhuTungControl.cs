@@ -16,6 +16,11 @@ namespace QuanLyCuaHangPhuTungXeMay
             return ptMod.GetData();
         }
 
+        public DataTable GetDataTim(string sql)
+        {
+            return ptMod.GetDataTim(sql);
+        }
+
         public bool ThemPhuTung(PhuTung pt)
         {
             return ptMod.ThemPhuTung(pt);

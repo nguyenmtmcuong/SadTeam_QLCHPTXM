@@ -16,6 +16,11 @@ namespace QuanLyCuaHangPhuTungXeMay
             return lxMod.GetData();
         }
 
+        public DataTable GetDataTim(string sql)
+        {
+            return lxMod.GetDataTim(sql);
+        }
+
         public bool ThemLoaiXe(LoaiXe lx)
         {
             return lxMod.ThemLoaiXe(lx);

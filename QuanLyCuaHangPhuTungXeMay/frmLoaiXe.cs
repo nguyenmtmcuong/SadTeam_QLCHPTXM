@@ -190,5 +190,10 @@ namespace QuanLyCuaHangPhuTungXeMay
                 this.Close();
             }
         }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            dgvLoaiXe.DataSource = lxCtrl.GetDataTim(txtTim.Text);
+        }
     }
 }
