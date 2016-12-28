@@ -59,7 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectToSQL.cs" />
+    <Compile Include="Class\ConnectToSQL.cs" />
     <Compile Include="frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,19 +90,19 @@
     <Compile Include="frmPhuTung.Designer.cs">
       <DependentUpon>frmPhuTung.cs</DependentUpon>
     </Compile>
-    <Compile Include="KhachHangClass.cs" />
-    <Compile Include="KhachHangControl.cs" />
-    <Compile Include="KhachHangModel.cs" />
-    <Compile Include="LoaiXeClass.cs" />
-    <Compile Include="LoaiXeControl.cs" />
-    <Compile Include="LoaiXeModel.cs" />
-    <Compile Include="NhanVienClass.cs" />
-    <Compile Include="NhanVienControl.cs" />
-    <Compile Include="NhanVienModel.cs" />
-    <Compile Include="PhuTungClass.cs" />
-    <Compile Include="PhuTungControl.cs" />
-    <Compile Include="PhuTungModel.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Class\KhachHangClass.cs" />
+    <Compile Include="Class\KhachHangControl.cs" />
+    <Compile Include="Class\KhachHangModel.cs" />
+    <Compile Include="Class\LoaiXeClass.cs" />
+    <Compile Include="Class\LoaiXeControl.cs" />
+    <Compile Include="Class\LoaiXeModel.cs" />
+    <Compile Include="Class\NhanVienClass.cs" />
+    <Compile Include="Class\NhanVienControl.cs" />
+    <Compile Include="Class\NhanVienModel.cs" />
+    <Compile Include="Class\PhuTungClass.cs" />
+    <Compile Include="Class\PhuTungControl.cs" />
+    <Compile Include="Class\PhuTungModel.cs" />
+    <Compile Include="Class\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
