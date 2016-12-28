@@ -15,7 +15,7 @@ namespace QuanLyCuaHangPhuTungXeMay
 {
     public partial class frmNhanVien : Form
     {
-
+        ConnectToSQL cn = new ConnectToSQL();
         NhanVienControl nvCtrl = new NhanVienControl();
         NhanVien nv = new NhanVien();
         int flag = 0;
@@ -161,6 +161,15 @@ namespace QuanLyCuaHangPhuTungXeMay
                 this.Close();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dgvNhanVien.DataSource = nvCtrl.GetDataTim(txtTim.Text);
+            
+
+        }
+
+        
 
 
 

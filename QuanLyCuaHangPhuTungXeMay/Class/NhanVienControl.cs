@@ -16,6 +16,11 @@ namespace QuanLyCuaHangPhuTungXeMay
             return nvMod.GetData();
         }
 
+        public DataTable GetDataTim(string sql)
+        {
+            return nvMod.GetDataTim(sql);
+        }
+
         public bool ThemNhanVien(NhanVien nv)
         {
             return nvMod.ThemNhanVien(nv);

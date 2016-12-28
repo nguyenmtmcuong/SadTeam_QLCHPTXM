@@ -171,6 +171,11 @@ namespace QuanLyCuaHangPhuTungXeMay
             }
         }
 
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            dgvKhachHang.DataSource = khCtrl.GetDataTim(txtTim.Text);
+        }
+
         //public void txtNhap_TextChanged(object sender, EventArgs e)
         //{
         //    string sql = " select * from KhachHang where";

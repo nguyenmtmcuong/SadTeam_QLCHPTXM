@@ -54,10 +54,14 @@
             this.cbbLoaiXe = new System.Windows.Forms.ComboBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnTim = new System.Windows.Forms.Button();
+            this.txtTim = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnXoa
@@ -357,7 +361,7 @@
             this.groupBox3.Controls.Add(this.btnXoa);
             this.groupBox3.Controls.Add(this.btnSua);
             this.groupBox3.Controls.Add(this.btnThem);
-            this.groupBox3.Location = new System.Drawing.Point(105, 292);
+            this.groupBox3.Location = new System.Drawing.Point(240, 292);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(1);
@@ -481,12 +485,41 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Ghi chú";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnTim);
+            this.groupBox4.Controls.Add(this.txtTim);
+            this.groupBox4.Location = new System.Drawing.Point(4, 291);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(232, 85);
+            this.groupBox4.TabIndex = 7;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Tìm Nhanh";
+            // 
+            // btnTim
+            // 
+            this.btnTim.Location = new System.Drawing.Point(165, 20);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(61, 52);
+            this.btnTim.TabIndex = 3;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // txtTim
+            // 
+            this.txtTim.Location = new System.Drawing.Point(8, 33);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Size = new System.Drawing.Size(151, 26);
+            this.txtTim.TabIndex = 2;
+            // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(709, 388);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -502,6 +535,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -534,5 +569,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgvKhachHang;
         private System.Windows.Forms.ComboBox cbbLoaiXe;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.TextBox txtTim;
     }
 }

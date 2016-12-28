@@ -16,6 +16,11 @@ namespace QuanLyCuaHangPhuTungXeMay
             return khMod.GetData();
         }
 
+        public DataTable GetDataTim(string sql)
+        {
+            return khMod.GetDataTim(sql);
+        }
+
         public bool ThemKhachHang(KhachHang kh)
         {
             return khMod.ThemKhachHang(kh);
